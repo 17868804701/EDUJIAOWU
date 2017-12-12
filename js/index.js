@@ -351,7 +351,7 @@
                 "F_EnCode": "AreaManage",
                 "F_FullName": "学籍管理",
                 "F_Icon": "fa fa-leaf",
-                "F_UrlAddress": "/EDU/pages/xuejiManger.html",
+                "F_UrlAddress": "/EDUJIAOWU/pages/xuejiManger.html",
                 "F_Target": "iframe",
                 "F_IsMenu": 1,
                 "F_AllowExpand": 1,

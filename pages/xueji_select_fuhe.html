@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalabel=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 1650px}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        .select input{height: 35px!important;width: 200px}
+        .selects{float: left;margin: 10px}
+        .selects select{height: 33px;width: 140px;color: #333;border: 1px solid #e6e6e6}
+        .selects select option{height: 33px;width: 140px;color: #333}
+        .selects label{color: #999999!important;width: 70px;display: inline-block;text-align: right}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 1184px">
+    <legend style="font-size: 14px"><span class="color">学籍信息&nbsp;-&nbsp;复合查询</span></legend>
+    <div class="selects">
+        <label>选择学期：</label>
+        <select>
+            <option>第一学期</option>
+            <option>第二学期</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>选择学年：</label>
+        <select>
+            <option>2014</option>
+            <option>2015</option>
+            <option>2016</option>
+            <option>2017</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>学生类别：</label>
+        <select>
+            <option>统招</option>
+            <option>成教</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>修读方式：</label>
+        <select>
+            <option>普通全日制</option>
+            <option>业余</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>在学状态：</label>
+        <select>
+            <option>在读</option>
+            <option>未再度</option>
+            <option>休学</option>
+            <option>保留学籍</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>学籍状态：</label>
+        <select>
+            <option>降级</option>
+            <option>升级</option>
+            <option>转专业</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>注册状态：</label>
+        <select>
+            <option>已注册</option>
+            <option>未注册</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>毕业状态：</label>
+        <select>
+            <option>已毕业</option>
+            <option>未毕业</option>
+            <option>退学</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>延修状态：</label>
+        <select>
+            <option>是</option>
+            <option>否</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>入学年份：</label>
+        <select>
+            <option>2013</option>
+            <option>2014</option>
+            <option>2015</option>
+            <option>2016</option>
+            <option>2017</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>所在年级：</label>
+        <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>所在班别：</label>
+        <select>
+            <option>A</option>
+            <option>B</option>
+            <option>E</option>
+            <option>F</option>
+            <option>01</option>
+            <option>02</option>
+        </select>
+    </div>
+
+    <div class="selects">
+        <label>学制：</label>
+        <select>
+            <option>4年</option>
+            <option>3年</option>
+            <option>5年</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>学历：</label>
+        <select>
+            <option>本科</option>
+            <option>专科</option>
+            <option>研究生</option>
+        </select>
+    </div>
+</fieldset>
+<button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px">立即查询</button>
+<span style="color: #333;margin-left: 20px">选择学期：2017第一学期、姓名：黄森</span>
+<!--<iframe src="./xuejiManger.html" scrolling="0" frameborder="0" style="height: 100%"></iframe>-->
+<script src="../layui/layui.js"></script>
+<script src="../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+</html>
