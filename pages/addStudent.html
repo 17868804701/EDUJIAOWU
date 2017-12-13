@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        .select input{height: 35px!important;width: 200px}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%;">
+    <legend style="font-size: 14px"><span class="color">新增学生</span></legend>
+    <div class="layui-form select">
+        <table class="layui-table">
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">正式学籍类别</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">学籍学生</option>
+                                <option value="2">非学籍学生</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">证件类别</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">本国</option>
+                                <option value="2">港澳台</option>
+                                <option value="2">国际生</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:110px;">身份证号码</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="请输入身份证号">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline" style="margin-left: -20px">
+                        <label class="layui-form-label" style="width:110px;">学号</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="请输入学号">
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline" style="margin-left: 10px">
+                        <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="请输入姓名">
+                        </div>
+                    </div>
+                </td>
+                <td colspan="2" style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">入学年份</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">2017</option>
+                                <option value="2">2016</option>
+                                <option value="2">2015</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline" style="margin-left: -20px">
+                        <label class="layui-form-label" style="width:110px;">入学日期</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="2014-09-01">
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline" style="margin-left: 10px">
+                        <label class="layui-form-label">学校</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" readonly="true" value="西安欧亚学院">
+                        </div>
+                    </div>
+                </td>
+                <td colspan="2" style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">学历</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">专科</option>
+                                <option value="2">本科</option>
+                                <option value="2">研究生</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">专业</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">软件工程</option>
+                                <option value="2">通信工程</option>
+                                <option value="3">网络工程</option>
+                                <option value="4">工程造价</option>
+                                <option value="5">土木工程</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">年级</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="2" style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">班别</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">统本软件1401</option>
+                                <option value="2">统本软件1402</option>
+                                <option value="3">统本软件1403</option>
+                                <option value="3">统本网络1401</option>
+                                <option value="3">统本网络1402</option>
+                                <option value="3">统本网络1403</option>
+                                <option value="3">统本网络1404</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: center;border: 0">
+                    <button class="layui-btn layui-btn-sm layui-btn-normal">保存</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</fieldset>
+<script src="../layui/layui.js"></script>
+<script src="../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+</html>

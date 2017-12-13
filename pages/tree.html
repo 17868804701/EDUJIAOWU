@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>活动类别设定</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <!-- load css -->
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css" media="all">
+    <style>
+        label{
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div style="display: inline-block; width: 20%;margin-top: 10px; padding: 10px; overflow: auto;border: 0px solid red;float: left">
+    <ul id="demo1"></ul>
+</div>
+</body>
+<script src="../layui/layui.js"></script>
+<script>
+    //Demo
+    layui.use(['tree', 'layer'], function(){
+        var layer = layui.layer
+            ,$ = layui.jquery;
+        layui.tree({
+            elem: '#demo1' //指定元素
+            ,target: 'tree' //是否新选项卡打开（比如节点返回href才有效）
+            ,click: function(item){ //点击节点回调
+//                layer.msg('当前节名称：'+ item.name + '<br>全部参数：'+ JSON.stringify(item));
+                console.log(item);
+            }
+            ,nodes: [ //节点
+                {
+                    name:"<input type='checkbox'/>" + '西安欧亚学院'
+                    ,id: 2
+                    ,href:'activity/ouya.html'
+                    ,spread: true
+                    ,children: [
+                    {
+                        name:"<input type='checkbox'/>" + '学生发展处'
+                        ,id: 22
+                        ,href:'activity/fenyuan.html'
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '学生处就业中心'
+                            ,id: 121
+                            ,href:'activity/fenyuan_node.html'
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '学生发展处研发中心'
+                            ,id: 121
+                            ,spread: true
+                        }
+                    ]
+                    },
+                    {
+                        name: "<input type='checkbox'/>" + '信息工程学院'
+                        ,id: 22
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '软件工程'
+                            ,id: 121
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '通信工程'
+                            ,id: 121
+                        }
+                    ]
+                    },
+                    {
+                        name: "<input type='checkbox'/>" + '人居环境学院'
+                        ,id: 22
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '土木工程'
+                            ,id: 121
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '工程造价'
+                            ,id: 121
+                        }
+                    ]
+                    }
+                ]
+                }
+            ]
+        });
+        var height = $(window).height();
+        $("body").css("height",height);
+        //生成一个模拟树
+        var createTree = function(node, start){
+            node = node || function(){
+                    var arr = [];
+                    for(var i = 1; i < 10; i++){
+                        arr.push({
+                            name: i.toString().replace(/(\d)/, '$1$1$1$1$1$1$1$1$1')
+                        });
+                    }
+                    return arr;
+                }();
+            start = start || 1;
+            layui.each(node, function(index, item){
+                if(start < 10 && index < 9){
+                    var child = [
+                        {
+                            name: (1 + index + start).toString().replace(/(\d)/, '$1$1$1$1$1$1$1$1$1')
+                        }
+                    ];
+                    node[index].children = child;
+                    createTree(child, index + start + 1);
+                }
+            });
+            return node;
+        };
+        layui.tree({
+            elem: '#demo2' //指定元素
+            ,nodes: createTree()
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        .select input{height: 35px!important;width: 200px}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;">
+    <legend style="font-size: 14px"><span class="color">学籍操作记录&nbsp;-&nbsp;查询</span></legend>
+    <div class="layui-form select">
+        <table class="layui-table">
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">学号</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="请输入学号">
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <button class="layui-btn layui-btn-sm layui-btn-normal">查询</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</fieldset>
+<table class="layui-table" lay-size="sm">
+    <thead>
+        <td>序号</td>
+        <td>学年</td>
+        <td>学期</td>
+        <td>动作</td>
+        <td>操作人员</td>
+        <td>操作时间</td>
+        <td>操作</td>
+    </thead>
+    <tr>
+        <td>01</td>
+        <td>2016</td>
+        <td>第一学期</td>
+        <td>转专业</td>
+        <td>admin</td>
+        <td>2016-09-08</td>
+        <td><span style="color: blue;text-decoration: underline;cursor: pointer">删除</span></td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>2017</td>
+        <td>第一学期</td>
+        <td>修改成绩</td>
+        <td>admin</td>
+        <td>2017-09-08</td>
+        <td><span style="color: blue;text-decoration: underline;cursor: pointer">删除</span></td>
+    </tr>
+</table>
+
+
+<table class="layui-table" lay-size="sm">
+    <thead>
+    <td>学年度</td>
+    <td>学期</td>
+    <td>年级</td>
+    <td>就读院系年班组</td>
+    <td>修读方式</td>
+    <td>教育学程(级)</td>
+    <td>辅系状态</td>
+    <td>注册状态</td>
+    <td>注册备注</td>
+    <td>缴费状态</td>
+    <td>在读状态</td>
+    <td>学籍状态</td>
+    <td>毕业状态</td>
+    <td>延修状态</td>
+    <td>减免</td>
+    <td>交换生</td>
+    <td>留级</td>
+    </thead>
+    <tr>
+        <td>2014</td>
+        <td>第一学期</td>
+        <td>2014</td>
+        <td>软件工程 1 年 统本软件1401 班</td>
+        <td>普通全日制</td>
+        <td></td>
+        <td></td>
+        <td>已注册</td>
+        <td></td>
+        <td>未缴费</td>
+        <td>在读</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2014</td>
+        <td>第二学期</td>
+        <td>2014</td>
+        <td>软件工程 1 年 统本软件1401 班</td>
+        <td>普通全日制</td>
+        <td></td>
+        <td></td>
+        <td>已注册</td>
+        <td></td>
+        <td>未缴费</td>
+        <td>在读</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2015</td>
+        <td>第一学期</td>
+        <td>2015</td>
+        <td>软件工程 2 年 统本软件1401 班</td>
+        <td>普通全日制</td>
+        <td></td>
+        <td></td>
+        <td>已注册</td>
+        <td></td>
+        <td>未缴费</td>
+        <td>在读</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2015</td>
+        <td>第二学期</td>
+        <td>2015</td>
+        <td>软件工程 2 年 统本软件1401 班</td>
+        <td>普通全日制</td>
+        <td></td>
+        <td></td>
+        <td>已注册</td>
+        <td></td>
+        <td>未缴费</td>
+        <td>在读</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<script src="../layui/layui.js"></script>
+<script src="../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+</html>
