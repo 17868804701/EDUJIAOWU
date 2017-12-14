@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        .select input{height: 35px!important;width: 200px}
+        thead td{background: #3c8dbc!important;color: white}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
+    <legend style="font-size: 14px"><span class="color">教学执行计划(开课单位)</span></legend>
+    <div class="layui-form select">
+        <table class="layui-table">
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">选择学年</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择学年</option>
+                                <option value="1">2014</option>
+                                <option value="2">2015</option>
+                                <option value="3">2016</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">选择学期</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择学期</option>
+                                <option value="1">第一学期</option>
+                                <option value="2">第二学期</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">单位</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">西安欧亚学院</option>
+                                <option value="2">学生发展处</option>
+                                <option value="3">图文信息中心</option>
+                                <option value="4">信息工程学院</option>
+                                <option value="5">人文教育学院</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">专业</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">学前教育</option>
+                                <option value="2">国际基础教育</option>
+                                <option value="3">工程管理</option>
+                                <option value="4">软件工程</option>
+                                <option value="5">电子信息工程</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">状态</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">开课</option>
+                                <option value="2">未开课</option>
+                                <option value="3">已开课</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="2" style="border: none">
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</fieldset>
+<button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px">立即查询</button>
+<button class="layui-btn layui-btn-xs layui-btn-normal add" style="margin-left: 10px;">增开课程</button>
+<button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px;">导出Excel</button>
+<table class="layui-table" lay-size="sm">
+    <thead>
+    <td>序号</td>
+    <td>学级</td>
+    <td>	课目代号</td>
+    <td>	课目名称</td>
+    <td>必选修别</td>
+    <td>学分</td>
+    <td>周学时</td>
+    <td>总学时</td>
+    <td>学院</td>
+    <td>院系</td>
+    <td>开课班级</td>
+    <td>人数</td>
+    <td>备注</td>
+    <td>是否开课</td>
+    <td>操作</td>
+    </thead>
+    <tr>
+        <td>01</td>
+        <td>2017</td>
+        <td>	0662</td>
+        <td>管理学</td>
+        <td>必修</td>
+        <td>1</td>
+        <td>3</td>
+        <td>48</td>
+        <td>	物流贸易学院</td>
+        <td>电子商务</td>
+        <td>2</td>
+        <td>64</td>
+        <td></td>
+        <td>是</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>2017</td>
+        <td>	0662</td>
+        <td>	形势与政策教育</td>
+        <td>必修</td>
+        <td>1</td>
+        <td>3</td>
+        <td>48</td>
+        <td>	物流贸易学院</td>
+        <td>电子商务</td>
+        <td>2</td>
+        <td>64</td>
+        <td></td>
+        <td>是</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>03</td>
+        <td>2017</td>
+        <td>	0662</td>
+        <td>		军事技能训练</td>
+        <td>必修</td>
+        <td>1</td>
+        <td>3</td>
+        <td>48</td>
+        <td>	物流贸易学院</td>
+        <td>电子商务</td>
+        <td>2</td>
+        <td>64</td>
+        <td></td>
+        <td>是</td>
+        <td></td>
+    </tr>
+</table>
+<div id="addkecheng" style="display: none;">
+    <div class="layui-form select">
+        <table class="layui-table">
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">开课学年</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">2014</option>
+                                <option value="2">2015</option>
+                                <option value="3">2016</option>
+                                <option value="4">2017</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">开课学期</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">第一学期</option>
+                                <option value="2">第二学期</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">开课单位</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">学生处</option>
+                                <option value="2">教务处</option>
+                                <option value="2">学生发展处</option>
+                                <option value="2">图文信息中心</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">开课年级</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">必选修</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">选修</option>
+                                <option value="2">必修</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="2" style="border: none">
+                    <div class="layui-inline" style="margin-left: -20px">
+                        <label class="layui-form-label" style="width:110px;">科目代码</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="213540">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline" style="margin-left: -20px">
+                        <label class="layui-form-label" style="width:110px;">课程名称</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="数据库">
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">分院</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">学生处</option>
+                                <option value="2">信息工程学院</option>
+                                <option value="2">物流贸易学院</option>
+                                <option value="2">人居环境学院</option>
+                                <option value="2">会计学院</option>
+                                <option value="2">金融学院</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="2" style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">专业方向</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">软件开发</option>
+                                <option value="2">教育</option>
+                                <option value="2">研究</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline" style="margin-left: -20px">
+                        <label class="layui-form-label" style="width:110px;">学分数</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="学分数">
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline" style="margin-left: -20px">
+                        <label class="layui-form-label" style="width:110px;">总时数</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="总时数">
+                        </div>
+                    </div>
+                </td>
+                <td colspan="2" style="border: none">
+                    <div class="layui-inline" style="margin-left: -20px">
+                        <label class="layui-form-label" style="width:110px;">周时数</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="周时数">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline" style="margin-left: -20px">
+                        <label class="layui-form-label" style="width:110px;">开课班淑</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="开课班淑">
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline" style="margin-left: -20px">
+                        <label class="layui-form-label" style="width:110px;">人数</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="人数">
+                        </div>
+                    </div>
+                </td>
+                <td colspan="2" style="border: none">
+                    <div class="layui-inline" style="margin-left: -20px">
+                        <label class="layui-form-label" style="width:110px;">备注</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="备注">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4" style="text-align: center;border: 0">
+                    <button class="layui-btn layui-btn-sm layui-btn-normal">保存</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element',"laydate", function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+<script>
+    $(function () {
+        $(function () {
+            $(".add").click(function () {
+                layer.open({
+                    type: 1,
+                    title: '增开课程',
+                    area: ['100%', '100%;'],
+                    content: $('#addkecheng')
+                });
+            })
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        .select input{height: 35px!important;width: 200px}
+        thead td{background: #3c8dbc!important;color: white}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
+    <legend style="font-size: 14px"><span class="color">教师课表查询</span></legend>
+    <div class="layui-form select">
+        <table class="layui-table">
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">选择学年</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择学年</option>
+                                <option value="1">2014</option>
+                                <option value="2">2015</option>
+                                <option value="3">2016</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">选择学期</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择学期</option>
+                                <option value="1">第一学期</option>
+                                <option value="2">第二学期</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">教师工号</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="请输入工号">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</fieldset>
+<button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px">立即查询</button>
+<button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px">打印课表</button>
+<table class="layui-table" lay-size="sm">
+    <thead>
+    <td></td>
+    <td>星期日</td>
+    <td>星期一</td>
+    <td>星期二</td>
+    <td>星期三</td>
+    <td>星期四</td>
+    <td>星期五</td>
+    <td>星期六</td>
+    </thead>
+    <tr>
+        <td>第一周</td>
+        <td></td>
+        <td style="text-align: center">
+            2017/9/4 <br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td style="text-align: center">
+            2017/9/6<br>
+            第1,2节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td style="text-align: center">
+            2017/9/7<br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>第二周</td>
+        <td></td>
+        <td style="text-align: center">
+            2017/9/4 <br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td style="text-align: center">
+            2017/9/6<br>
+            第1,2节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td style="text-align: center">
+            2017/9/7<br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>第三周</td>
+        <td></td>
+        <td style="text-align: center">
+            2017/9/4 <br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td style="text-align: center">
+            2017/9/6<br>
+            第1,2节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td style="text-align: center">
+            2017/9/7<br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>第四周</td>
+        <td></td>
+        <td style="text-align: center">
+            2017/9/4 <br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td style="text-align: center">
+            2017/9/6<br>
+            第1,2节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td style="text-align: center">
+            2017/9/7<br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>第五周</td>
+        <td></td>
+        <td style="text-align: center">
+            2017/9/4 <br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td style="text-align: center">
+
+        </td>
+        <td style="text-align: center">
+            2017/9/7<br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>第六周</td>
+        <td></td>
+        <td style="text-align: center">
+            2017/9/4 <br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td style="text-align: center">
+
+        </td>
+        <td style="text-align: center">
+            2017/9/7<br>
+            第3,4节<br>
+            面向对象程序设计(Java)<br>
+            张迪<br>
+            教学西区B楼B-204 移动软件开发实训室<br>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element',"laydate", function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+</html>

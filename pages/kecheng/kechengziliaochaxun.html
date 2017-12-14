@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalabel=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body {
+            background: white;
+            width: 100%
+        }
+
+        .color {
+            color: #1E9FFF !important;
+            font-weight: bold
+        }
+
+        .select input {
+            height: 35px !important;
+            width: 200px
+        }
+
+        .selects {
+            float: left;
+            margin: 10px
+        }
+
+        .selects select {
+            height: 33px;
+            width: 140px;
+            color: #333;
+            border: 1px solid #e6e6e6
+        }
+
+        .selects select option {
+            height: 33px;
+            width: 140px;
+            color: #333
+        }
+
+        .selects label {
+            color: #999999 !important;
+            width: 70px;
+            display: inline-block;
+            text-align: right
+        }thead td{background: #3c8dbc!important;color: white}
+        /*#tree{*/
+        /*width: 20%;*/
+        /*margin-top: 0px;*/
+        /*height: 400px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 1184px">
+    <legend style="font-size: 14px"><span class="color">科目查询</span></legend>
+    <div class="selects">
+        <label>选择学期：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>第一学期</option>
+            <option>第二学期</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>选择学年：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>2014</option>
+            <option>2015</option>
+            <option>2016</option>
+            <option>2017</option>
+        </select>
+    </div>
+
+
+    <div class="selects">
+        <label>专业：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>软件工程</option>
+            <option>通信工程</option>
+            <option>网络工程</option>
+            <option>物联网</option>
+            <option>土木</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>所在年级：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>必选修课：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>必修</option>
+            <option>选修</option>
+        </select>
+    </div>
+
+    <div class="selects">
+        <label>主科类别：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>通识选修</option>
+            <option>专业选修</option>
+            <option>网络选修</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>授课语言：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>中文</option>
+            <option>英文</option>
+        </select>
+    </div>
+</fieldset>
+<table class="layui-table" lay-size="sm">
+    <thead>
+        <td>序号</td>
+        <td>科目总码</td>
+        <td>科目名称</td>
+        <td>开课单位</td>
+        <td>开课年班</td>
+        <td>学期制</td>
+        <td>学分数</td>
+        <td>必选修课</td>
+        <td>选课上限</td>
+        <td>评分方式</td>
+        <td>主科类别</td>
+        <td>允许退选</td>
+        <td>授课语言</td>
+        <td>上课时间</td>
+        <td>授课教师</td>
+        <td>上课教室</td>
+    </thead>
+    <tr>
+        <td>01</td>
+        <td>17101115001013A0118000</td>
+        <td>英语语言学</td>
+        <td>0111500101</td>
+        <td>3A</td>
+        <td>学期课</td>
+        <td>3</td>
+        <td>选修课</td>
+        <td>20</td>
+        <td>百分至</td>
+        <td>学科专业</td>
+        <td>不允许</td>
+        <td>中文</td>
+        <td>	星期二 第1,2节 </td>
+        <td>杨晓霞</td>
+        <td>D-401 教室</td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>17101115001013B0118000	</td>
+        <td>英语口语实践V</td>
+        <td>01115100101</td>
+        <td>3A</td>
+        <td>学期课</td>
+        <td>3</td>
+        <td>选修课</td>
+        <td>20</td>
+        <td>百分至</td>
+        <td>学科专业</td>
+        <td>不允许</td>
+        <td>中文</td>
+        <td>	星期二 第1,2节 </td>
+        <td>杨晓霞</td>
+        <td>D-401 教室</td>
+    </tr>
+    <tr>
+        <td>03</td>
+        <td>17101115001013B0118000	</td>
+        <td>	英语精读V</td>
+        <td>01115100101</td>
+        <td>3A</td>
+        <td>学期课</td>
+        <td>3</td>
+        <td>选修课</td>
+        <td>20</td>
+        <td>百分至</td>
+        <td>学科专业</td>
+        <td>不允许</td>
+        <td>中文</td>
+        <td>	星期二 第1,2节 </td>
+        <td>杨晓霞</td>
+        <td>D-401 教室</td>
+    </tr>
+    <tr>
+        <td>04</td>
+        <td>17101115001013A0118000</td>
+        <td>英语语言学</td>
+        <td>0111500101</td>
+        <td>3A</td>
+        <td>学期课</td>
+        <td>3</td>
+        <td>选修课</td>
+        <td>20</td>
+        <td>百分至</td>
+        <td>学科专业</td>
+        <td>不允许</td>
+        <td>中文</td>
+        <td>	星期二 第1,2节 </td>
+        <td>杨晓霞</td>
+        <td>D-401 教室</td>
+    </tr>
+    <tr>
+        <td>05</td>
+        <td>17101115001013B0118000	</td>
+        <td>英语口语实践V</td>
+        <td>01115100101</td>
+        <td>3A</td>
+        <td>学期课</td>
+        <td>3</td>
+        <td>选修课</td>
+        <td>20</td>
+        <td>百分至</td>
+        <td>学科专业</td>
+        <td>不允许</td>
+        <td>中文</td>
+        <td>	星期二 第1,2节 </td>
+        <td>杨晓霞</td>
+        <td>D-401 教室</td>
+    </tr>
+    <tr>
+        <td>06</td>
+        <td>17101115001013B0118000	</td>
+        <td>	英语精读V</td>
+        <td>01115100101</td>
+        <td>3A</td>
+        <td>学期课</td>
+        <td>3</td>
+        <td>选修课</td>
+        <td>20</td>
+        <td>百分至</td>
+        <td>学科专业</td>
+        <td>不允许</td>
+        <td>中文</td>
+        <td>	星期二 第1,2节 </td>
+        <td>杨晓霞</td>
+        <td>D-401 教室</td>
+    </tr>
+</table>
+<!--<iframe src="./tree.html" frameborder="0" scrolling="0" id="tree"></iframe>-->
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element', function () {
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function (elem) {
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    //Demo
+    layui.use(['tree', 'layer'], function(){
+        var layer = layui.layer
+            ,$ = layui.jquery;
+        layui.tree({
+            elem: '#demo1' //指定元素
+            ,target: 'tree' //是否新选项卡打开（比如节点返回href才有效）
+            ,click: function(item){ //点击节点回调
+//                layer.msg('当前节名称：'+ item.name + '<br>全部参数：'+ JSON.stringify(item));
+                console.log(item);
+            }
+            ,nodes: [ //节点
+                {
+                    name:"<input type='checkbox'/>" + '西安欧亚学院'
+                    ,id: 2
+                    ,href:'activity/ouya.html'
+                    ,spread: true
+                    ,children: [
+                    {
+                        name:"<input type='checkbox'/>" + '学生发展处'
+                        ,id: 22
+                        ,href:'activity/fenyuan.html'
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '学生处就业中心'
+                            ,id: 121
+                            ,href:'activity/fenyuan_node.html'
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '学生发展处研发中心'
+                            ,id: 121
+                            ,spread: true
+                        }
+                    ]
+                    },
+                    {
+                        name: "<input type='checkbox'/>" + '信息工程学院'
+                        ,id: 22
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '软件工程'
+                            ,id: 121
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '通信工程'
+                            ,id: 121
+                        }
+                    ]
+                    },
+                    {
+                        name: "<input type='checkbox'/>" + '人居环境学院'
+                        ,id: 22
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '土木工程'
+                            ,id: 121
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '工程造价'
+                            ,id: 121
+                        }
+                    ]
+                    }
+                ]
+                }
+            ]
+        });
+        var height = $(window).height();
+        $("body").css("height",height);
+        //生成一个模拟树
+        var createTree = function(node, start){
+            node = node || function(){
+                    var arr = [];
+                    for(var i = 1; i < 10; i++){
+                        arr.push({
+                            name: i.toString().replace(/(\d)/, '$1$1$1$1$1$1$1$1$1')
+                        });
+                    }
+                    return arr;
+                }();
+            start = start || 1;
+            layui.each(node, function(index, item){
+                if(start < 10 && index < 9){
+                    var child = [
+                        {
+                            name: (1 + index + start).toString().replace(/(\d)/, '$1$1$1$1$1$1$1$1$1')
+                        }
+                    ];
+                    node[index].children = child;
+                    createTree(child, index + start + 1);
+                }
+            });
+            return node;
+        };
+        layui.tree({
+            elem: '#demo2' //指定元素
+            ,nodes: createTree()
+        });
+    });
+</script>
+</body>
+</html>

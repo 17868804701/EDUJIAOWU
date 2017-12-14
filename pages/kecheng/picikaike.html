@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        .select input{height: 35px!important;width: 200px}
+        thead td{background: #3c8dbc!important;color: white}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
+    <legend style="font-size: 14px"><span class="color">批次开课</span></legend>
+    <div class="layui-form select">
+        <table class="layui-table">
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">选择学年</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择学年</option>
+                                <option value="1">2014</option>
+                                <option value="2">2015</option>
+                                <option value="3">2016</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">选择学期</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择学期</option>
+                                <option value="1">第一学期</option>
+                                <option value="2">第二学期</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">单位</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">西安欧亚学院</option>
+                                <option value="2">学生发展处</option>
+                                <option value="3">图文信息中心</option>
+                                <option value="4">信息工程学院</option>
+                                <option value="5">人文教育学院</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">专业</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">学前教育</option>
+                                <option value="2">国际基础教育</option>
+                                <option value="3">工程管理</option>
+                                <option value="4">软件工程</option>
+                                <option value="5">电子信息工程</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td style="border: none">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">展开年级</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <select name="quiz">
+                                <option value="">请选择</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+                <td colspan="2" style="border: none">
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</fieldset>
+<button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px">立即查询</button>
+<table class="layui-table" lay-size="sm">
+    <thead>
+        <td style="background: #3c8dbc">序号</td>
+        <td>开课学级</td>
+        <td>系所名称</td>
+        <td>开课年级</td>
+        <td>已开/规划</td>
+        <td>操作</td>
+    </thead>
+    <tr>
+        <td>1</td>
+        <td>2017</td>
+        <td>(0111500102)  英语教育</td>
+        <td>1</td>
+        <td>7/9</td>
+        <td>
+            <a class="openKe" style="color: blue;text-decoration: underline;cursor: pointer">开课</a>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>2016</td>
+        <td>(0111500102)  英语教育</td>
+        <td>1</td>
+        <td>7/9</td>
+        <td>
+            <a style="color: black;text-decoration: underline;">未设定院系专业资料</a>
+        </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>2015</td>
+        <td>(0111500102)  学前教育</td>
+        <td>1</td>
+        <td>7/9</td>
+        <td>
+            <a style="color: black;text-decoration: underline;">未设定院系专业资料</a>
+        </td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>2015</td>
+        <td>(0111500102)  学前教育</td>
+        <td>1</td>
+        <td>7/9</td>
+        <td>
+            <a style="color: black;text-decoration: underline;">未设定院系专业资料</a>
+        </td>
+    </tr>
+
+</table>
+<div id="kaike" style="display: none;padding: 10px">
+    <fieldset class="layui-elem-field site-demo-button" style="width: 100%;height: 1900px">
+        <legend style="font-size: 14px"><span class="color">规划清单</span></legend>
+        <table class="layui-table" lay-size="sm" style="width: 40%;margin-left: 20px">
+            <tr>
+                <td>系所学级：2017</td>
+                <td>系所：(0122100501) 建筑室内设计（普通班）    1年级</td>
+            </tr>
+            <tr>
+                <td>开课学年：2017</td>
+                <td>开课学期：第一学期</td>
+            </tr>
+        </table>
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief" style="margin-left: 20px">
+            <ul class="layui-tab-title">
+                <li class="layui-this">规划清单</li>
+                <li>开课属性</li>
+                <li>开课修改</li>
+            </ul>
+            <div class="layui-tab-content" style="height: 100px;">
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table" style="width: 50%;margin-top: -10px;margin-left: -20px">
+                        <tr>
+                            <td style="border: 0">必修开班数：<input type="text" style="width: 100px" ></td>
+                            <td style="border: 0">选修开班数：<input type="text" style="width: 100px"></td>
+                        </tr>
+                    </table>
+                    本学期已开课程
+                    <table class="layui-table" lay-size="sm">
+                        <thead>
+                            <td>序号</td>
+                            <td>子模块名称</td>
+                            <td>科目代码</td>
+                            <td>科目名称</td>
+                            <td>学分</td>
+                            <td>学时</td>
+                            <td>课程类别</td>
+                            <td>学年期课</td>
+                            <td>规划学年</td>
+                            <td>规划学期</td>
+                            <td>开课班级</td>
+                            <td>开课分班</td>
+                            <td>已开班级</td>
+                            <td>已开分组</td>
+                            <td>已开课程</td>
+                        </thead>
+                        <tr>
+                            <td>1</td>
+                            <td>应用英语专业-学科平台课程</td>
+                            <td>0098</td>
+                            <td>英语写作（三）</td>
+                            <td>2</td>
+                            <td>4</td>
+                            <td>必修</td>
+                            <td>学期课</td>
+                            <td>第一学期</td>
+                            <td>2015</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>2班</td>
+                            <td>1组</td>
+                            <td>454685312.2</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>应用英语专业-学科平台课程</td>
+                            <td>0098</td>
+                            <td>英语写作（三）</td>
+                            <td>2</td>
+                            <td>4</td>
+                            <td>必修</td>
+                            <td>学期课</td>
+                            <td>第一学期</td>
+                            <td>2015</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>2班</td>
+                            <td>1组</td>
+                            <td>454685312.2</td>
+                        </tr>
+                    </table>
+                    之前学期未开课之规划课程
+                    <table class="layui-table" lay-size="sm">
+                        <thead>
+                        <td><input type="checkbox"></td>
+                        <td>序号</td>
+                        <td>子模块名称</td>
+                        <td>科目代码</td>
+                        <td>科目名称</td>
+                        <td>学分</td>
+                        <td>学时</td>
+                        <td>课程类别</td>
+                        <td>学年期课</td>
+                        <td>规划学年</td>
+                        <td>规划学期</td>
+                        <td>开课班级</td>
+                        <td>开课分班</td>
+                        <td>已开班级</td>
+                        <td>已开分组</td>
+                        <td>已开课程</td>
+                        </thead>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>1</td>
+                            <td>应用英语专业-学科平台课程</td>
+                            <td>0098</td>
+                            <td>英语写作（三）</td>
+                            <td>2</td>
+                            <td>4</td>
+                            <td>必修</td>
+                            <td>学期课</td>
+                            <td>第一学期</td>
+                            <td>2015</td>
+                            <td><input type="text" style="width: 30px"></td>
+                            <td><input type="text" style="width: 30px"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>1</td>
+                            <td>应用英语专业-学科平台课程</td>
+                            <td>0098</td>
+                            <td>英语写作（三）</td>
+                            <td>2</td>
+                            <td>4</td>
+                            <td>必修</td>
+                            <td>学期课</td>
+                            <td>第一学期</td>
+                            <td>2015</td>
+                            <td><input type="text" style="width: 30px"></td>
+                            <td><input type="text" style="width: 30px"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="layui-tab-item">
+                    <table class="layui-table" style="margin-top: -10px;margin-left: -20px" lay-size="sm">
+                        <tr>
+                            <td style="border: 0">
+                                <div class="layui-inline" style="margin-left: 0px">
+                                    <div class="layui-input-inline">
+                                        <input type="text" class="layui-input" id="test1" placeholder="2015-10-10">
+                                    </div>--
+                                    <div class="layui-input-inline">
+                                        <input type="text" class="layui-input" id="test1" placeholder="2016-10-10">
+                                    </div>
+                                </div>
+                                <button class="layui-btn layui-btn-sm layui-btn-normal">批次修改开课课期间</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="layui-table" lay-size="sm" style="margin-left: -20px">
+                        <thead>
+                            <td><input type="checkbox"></td>
+                            <td>课目来源</td>
+                            <td>子模块名称</td>
+                            <td>科目代码</td>
+                            <td>科目名称</td>
+                            <td>学分</td>
+                            <td>规划学年期</td>
+                            <td>开课学年期</td>
+                            <td>开课期间</td>
+                            <td>选课上限</td>
+                            <td>课程类别</td>
+                            <td>评分方式</td>
+                            <td>主科类别</td>
+                        </thead>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>规划开课</td>
+                            <td>应用英语专业-学科平台课程</td>
+                            <td>0085</td>
+                            <td>英语精读（三）</td>
+                            <td>1</td>
+                            <td>学期</td>
+                            <td>第一学期</td>
+                            <td>2017-9至2018-1</td>
+                            <td>50</td>
+                            <td>院必</td>
+                            <td>百分比</td>
+                            <td>专业课</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>规划开课</td>
+                            <td>应用英语专业-学科平台课程</td>
+                            <td>0085</td>
+                            <td>英语翻译（三）</td>
+                            <td>1</td>
+                            <td>学期</td>
+                            <td>第一学期</td>
+                            <td>2017-9至2018-1</td>
+                            <td>50</td>
+                            <td>院必</td>
+                            <td>百分比</td>
+                            <td>专业课</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>规划开课</td>
+                            <td>应用英语专业-学科平台课程</td>
+                            <td>0085</td>
+                            <td>英语翻译（四）</td>
+                            <td>1</td>
+                            <td>学期</td>
+                            <td>第一学期</td>
+                            <td>2017-9至2018-1</td>
+                            <td>50</td>
+                            <td>院必</td>
+                            <td>百分比</td>
+                            <td>专业课</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="layui-tab-item">
+                    <table class="layui-table" lay-size="sm" style="margin-left: -10px;margin-top: -5px">
+                        <thead>
+                            <td>序号</td>
+                            <td>删课</td>
+                            <td>停开/重开</td>
+                            <td>科目来源</td>
+                            <td>子模块名称</td>
+                            <td>科目代码</td>
+                            <td>科目名称</td>
+                            <td>班级</td>
+                            <td>组别</td>
+                            <td>并班科目</td>
+                            <td>停开说明</td>
+                        </thead>
+                        <tr>
+                            <td>01</td>
+                            <td><span style="text-decoration: underline;color: blue;cursor: pointer">删除</span></td>
+                            <td><span style="text-decoration: underline;color: blue;cursor: pointer">停开/重开</span></td>
+                            <td>规划课程</td>
+                            <td>应用英语专业-学科平台课程</td>
+                            <td>15646510</td>
+                            <td>英语精读（一）</td>
+                            <td>1</td>
+                            <td>2组</td>
+                            <td></td>
+                            <td>改革</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td><span style="text-decoration: underline;color: blue;cursor: pointer">删除</span></td>
+                            <td><span style="text-decoration: underline;color: blue;cursor: pointer">停开/重开</span></td>
+                            <td>规划课程</td>
+                            <td>应用英语专业-学科平台课程</td>
+                            <td>15646510</td>
+                            <td>英语精读（二）</td>
+                            <td>1</td>
+                            <td>2组</td>
+                            <td></td>
+                            <td>改革</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td><span style="text-decoration: underline;color: blue;cursor: pointer">删除</span></td>
+                            <td><span style="text-decoration: underline;color: blue;cursor: pointer">停开/重开</span></td>
+                            <td>规划课程</td>
+                            <td>应用英语专业-学科平台课程</td>
+                            <td>15646510</td>
+                            <td>英语精读（三）</td>
+                            <td>1</td>
+                            <td>2组</td>
+                            <td></td>
+                            <td>改革</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td><span style="text-decoration: underline;color: blue;cursor: pointer">删除</span></td>
+                            <td><span style="text-decoration: underline;color: blue;cursor: pointer">停开/重开</span></td>
+                            <td>规划课程</td>
+                            <td>应用英语专业-学科平台课程</td>
+                            <td>15646510</td>
+                            <td>英语精读（四）</td>
+                            <td>1</td>
+                            <td>2组</td>
+                            <td></td>
+                            <td>改革</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element',"laydate", function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+<script>
+    $(function () {
+        $(".openKe").click(function () {
+            layer.open({
+                type: 1,
+                title: '开课管理',
+                area: ['100%', '100%;'],
+                content: $('#kaike')
+            });
+        })
+    })
+</script>
+</body>
+</html>

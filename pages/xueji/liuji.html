@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>layui在线调试</title>
-    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
     <style>
         body{background: white;width: 100%}
         .color{ color: #1E9FFF!important;font-weight: bold}
@@ -16,7 +16,7 @@
 <!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
 <!--</span>-->
 <fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
-    <legend style="font-size: 14px"><span class="color">学籍信息&nbsp;-&nbsp;转专业学生信息</span></legend>
+    <legend style="font-size: 14px"><span class="color">学籍信息&nbsp;-&nbsp;留级学生名单</span></legend>
     <div class="layui-form select">
         <table class="layui-table">
             <tr>
@@ -92,50 +92,73 @@
 <table class="layui-table" lay-size="sm">
     <thead>
     <td>分院</td>
-    <td>专业</td>
+    <td>学号</td>
+    <td>姓名</td>
     <td>层次</td>
-    <td>转出人数</td>
-    <td>转入人数</td>
+    <td>原年级</td>
+    <td>原专业</td>
+    <td>原班级</td>
+    <td>留级时间</td>
+    <td>现年级</td>
+    <td>现专业</td>
+    <td>现班级</td>
     </thead>
     <tr>
-        <td>信息工程学院</td>
-        <td>软件工程</td>
-        <td>本科生</td>
-        <td>11</td>
+        <td>(0111)人文教育学院</td>
+        <td>	13520523151253</td>
+        <td>	姚婷	</td>
+        <td>专科生</td>
         <td>2</td>
+        <td>	(0111100102)商务英语</td>
+        <td>统专商务英语1502</td>
+        <td>2017/03/16	</td>
+        <td>2</td>
+        <td>(0111100101)少儿英语教育</td>
+        <td>统专英1602</td>
     </tr>
     <tr>
-        <td>信息工程学院</td>
-        <td>电子信息工程</td>
-        <td>本科生</td>
-        <td>11</td>
+        <td>(0111)人文教育学院</td>
+        <td>13522301115120	</td>
+        <td>		冉启伟	</td>
+        <td>专科生</td>
         <td>2</td>
+        <td>	(0111100102)商务英语</td>
+        <td>统专商务英语1502</td>
+        <td>2017/03/16	</td>
+        <td>2</td>
+        <td>(0111100101)少儿英语教育</td>
+        <td>统专英1602</td>
     </tr>
     <tr>
-        <td>信息工程学院</td>
-        <td>网络工程</td>
-        <td>本科生</td>
-        <td>11</td>
+        <td>(0111)人文教育学院</td>
+        <td>13610304150001</td>
+        <td>	杨佳</td>
+        <td>专科生</td>
         <td>2</td>
+        <td>	(0111100102)商务英语</td>
+        <td>统专商务英语1502</td>
+        <td>2017/03/16	</td>
+        <td>2</td>
+        <td>(0111100101)少儿英语教育</td>
+        <td>统专英1602</td>
     </tr>
     <tr>
-        <td>信息工程学院</td>
-        <td>物联网</td>
-        <td>本科生</td>
-        <td>11</td>
+        <td>(0111)人文教育学院</td>
+        <td>13610401110723	</td>
+        <td>	张皓翔	</td>
+        <td>专科生</td>
         <td>2</td>
-    </tr>
-    <tr>
-        <td>信息工程学院</td>
-        <td>通信工程</td>
-        <td>本科生</td>
-        <td>11</td>
+        <td>	(0111100102)商务英语</td>
+        <td>统专商务英语1502</td>
+        <td>2017/03/16	</td>
         <td>2</td>
+        <td>(0111100101)少儿英语教育</td>
+        <td>统专英1602</td>
     </tr>
 
 </table>
-<script src="../layui/layui.js"></script>
-<script src="../layui/jquery-1.12.4.min.js"></script>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
 <script>
     layui.use('element', function(){
         var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块

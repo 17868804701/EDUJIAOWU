@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>layui在线调试</title>
-    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
     <style>
         body{background: white;width: 100%}
         .color{ color: #1E9FFF!important;font-weight: bold}
         .select input{height: 35px!important;width: 200px}
+        thead td{background: #3c8dbc!important;color: white}
     </style>
 </head>
 <body>
@@ -16,7 +17,7 @@
 <!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
 <!--</span>-->
 <fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
-    <legend style="font-size: 14px"><span class="color">学籍信息&nbsp;-&nbsp;复学学生名单</span></legend>
+    <legend style="font-size: 14px"><span class="color">教室汇入</span></legend>
     <div class="layui-form select">
         <table class="layui-table">
             <tr>
@@ -78,7 +79,12 @@
                     </div>
                 </td>
                 <td style="border: none">
-
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width:90px;">关键字</label>
+                        <div class="layui-input-inline" style="height: 30px">
+                            <input type="text" class="layui-input" placeholder="请输入关键字">
+                        </div>
+                    </div>
                 </td>
                 <td colspan="2" style="border: none">
 
@@ -88,91 +94,101 @@
     </div>
 </fieldset>
 <button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px">立即查询</button>
-<button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px">导出Excel</button>
+<button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px">整页汇入</button>
 <table class="layui-table" lay-size="sm">
     <thead>
-    <td>分院</td>
-    <td>学号</td>
-    <td>姓名</td>
-    <td>层次</td>
-    <td>原年级</td>
-    <td>原专业</td>
-    <td>原班级</td>
-    <td>休学时间</td>
-    <td>休学原因</td>
-    <td>现年级</td>
-    <td>现专业</td>
-    <td>现班级</td>
-    <td>复学时间</td>
+    <td style="background: #3c8dbc">序号</td>
+    <td>科目总码</td>
+    <td>科目名称</td>
+    <td>年级</td>
+    <td>班级</td>
+    <td>学分</td>
+    <td>学年期课</td>
+    <td>老师确认</td>
+    <td>上课教室</td>
+    <td>教室状态</td>
+    <td>操作</td>
     </thead>
     <tr>
-        <td>(0111)人文教育学院</td>
-        <td>15610109111530</td>
-        <td>	郝璐莹</td>
-        <td>专科生</td>
-        <td>2</td>
-        <td>	(0111100102)商务英语</td>
-        <td>统专商务英语1502</td>
-        <td>2017/03/16	</td>
-        <td>一般疾病</td>
-        <td>2</td>
-        <td>(0111100101)少儿英语教育</td>
-        <td>统专英1602</td>
-        <td>2017/08/30</td>
+        <td>1</td>
+        <td>171013050041A0272000</td>
+        <td>C语言程序设计 </td>
+        <td>1</td>
+        <td>A</td>
+        <td>3</td>
+        <td>学期课</td>
+        <td>周鹏</td>
+        <td>
+            教学西区B楼B-206 IOS软件开发实训室 <br>教学西区B楼B-207 Web开发实训室
+        </td>
+        <td>已核准</td>
+        <td>
+            <span class="add" style="color: blue;cursor: pointer;text-decoration: underline">汇入</span>
+        </td>
     </tr>
     <tr>
-        <td>(0111)人文教育学院</td>
-        <td>15610109111530</td>
-        <td>	郝璐莹</td>
-        <td>专科生</td>
         <td>2</td>
-        <td>	(0111100102)商务英语</td>
-        <td>统专商务英语1502</td>
-        <td>2017/03/16	</td>
-        <td>一般疾病</td>
-        <td>2</td>
-        <td>(0111100101)少儿英语教育</td>
-        <td>统专英1602</td>
-        <td>2017/08/30</td>
+        <td>171013050041A0272000</td>
+        <td>面向对象程序设计(Java) </td>
+        <td>1</td>
+        <td>A</td>
+        <td>3</td>
+        <td>学期课</td>
+        <td>周鹏</td>
+        <td>
+            教学西区B楼B-206 IOS软件开发实训室 <br>教学西区B楼B-207 Web开发实训室
+        </td>
+        <td>已核准</td>
+        <td>
+            <span class="add" style="color: blue;cursor: pointer;text-decoration: underline">汇入</span>
+        </td>
     </tr>
     <tr>
-        <td>(0111)人文教育学院</td>
-        <td>15610109111530</td>
-        <td>	郝璐莹</td>
-        <td>专科生</td>
-        <td>2</td>
-        <td>	(0111100102)商务英语</td>
-        <td>统专商务英语1502</td>
-        <td>2017/03/16	</td>
-        <td>一般疾病</td>
-        <td>2</td>
-        <td>(0111100101)少儿英语教育</td>
-        <td>统专英1602</td>
-        <td>2017/08/30</td>
+        <td>3</td>
+        <td>171013050041A0272000</td>
+        <td>	数据库设计与应用  </td>
+        <td>1</td>
+        <td>A</td>
+        <td>3</td>
+        <td>学期课</td>
+        <td>周鹏</td>
+        <td>
+            教学西区B楼B-206 IOS软件开发实训室 <br>教学西区B楼B-207 Web开发实训室
+        </td>
+        <td>已核准</td>
+        <td>
+            <span class="add" style="color: blue;cursor: pointer;text-decoration: underline">汇入</span>
+        </td>
     </tr>
     <tr>
-        <td>(0111)人文教育学院</td>
-        <td>15610109111530</td>
-        <td>	郝璐莹</td>
-        <td>专科生</td>
-        <td>2</td>
-        <td>	(0111100102)商务英语</td>
-        <td>统专商务英语1502</td>
-        <td>2017/03/16	</td>
-        <td>一般疾病</td>
-        <td>2</td>
-        <td>(0111100101)少儿英语教育</td>
-        <td>统专英1602</td>
-        <td>2017/08/30</td>
+        <td>3</td>
+        <td>171013050041A0272000</td>
+        <td>		面向对象程序设计(Java)  </td>
+        <td>1</td>
+        <td>A</td>
+        <td>3</td>
+        <td>学期课</td>
+        <td>周鹏</td>
+        <td>
+            教学西区B楼B-206 IOS软件开发实训室 <br>教学西区B楼B-207 Web开发实训室
+        </td>
+        <td>已核准</td>
+        <td>
+            <span class="add" style="color: blue;cursor: pointer;text-decoration: underline">汇入</span>
+        </td>
     </tr>
-
 </table>
-<script src="../layui/layui.js"></script>
-<script src="../layui/jquery-1.12.4.min.js"></script>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
 <script>
-    layui.use('element', function(){
+    layui.use('element',"laydate", function(){
         var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
 
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
         //监听导航点击
         element.on('nav(demo)', function(elem){
             //console.log(elem)

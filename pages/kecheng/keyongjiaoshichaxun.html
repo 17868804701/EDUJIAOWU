@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalabel=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body {
+            background: white;
+            width: 100%
+        }
+
+        .color {
+            color: #1E9FFF !important;
+            font-weight: bold
+        }
+
+        .select input {
+            height: 35px !important;
+            width: 200px
+        }
+
+        .selects {
+            float: left;
+            margin: 10px
+        }
+
+        .selects select {
+            height: 33px;
+            width: 140px;
+            color: #333;
+            border: 1px solid #e6e6e6
+        }
+
+        .selects select option {
+            height: 33px;
+            width: 140px;
+            color: #333
+        }
+
+        .selects label {
+            color: #999999 !important;
+            width: 70px;
+            display: inline-block;
+            text-align: right
+        }thead td{background: #3c8dbc!important;color: white}
+        /*#tree{*/
+        /*width: 20%;*/
+        /*margin-top: 0px;*/
+        /*height: 400px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 1184px">
+    <legend style="font-size: 14px"><span class="color">可用教室查询</span></legend>
+    <div class="selects">
+        <label>时间段：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>第1.2节</option>
+            <option>第3.4节</option>
+            <option>第4.5节</option>
+            <option>第5.6节</option>
+            <option>第6.7节</option>
+        </select>-
+        <select>
+            <option>--请选择--</option>
+            <option>第1.2节</option>
+            <option>第3.4节</option>
+            <option>第4.5节</option>
+            <option>第5.6节</option>
+            <option>第6.7节</option>
+        </select>
+    </div>
+
+
+    <div class="selects">
+        <label>教室：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>北区D203</option>
+            <option>北区D213</option>
+            <option>北区D212</option>
+            <option>北区D211</option>
+            <option>北区D209</option>
+            <option>北区D208</option>
+            <option>北区D207</option>
+            <option>北区D206</option>
+            <option>北区D205</option>
+            <option>北区D204</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>教室容量：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>100</option>
+            <option>200</option>
+            <option>300</option>
+            <option>400</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>教室用途：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>实验室</option>
+            <option>自习室</option>
+        </select>
+    </div>
+
+    <div class="selects">
+        <label>星期：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>时间：</label>
+        <input type="date" style="height: 33px;width: 140px;color: #333;border: 1px solid #e6e6e6">--
+        <input type="date" style="height: 33px;width: 140px;color: #333;border: 1px solid #e6e6e6">
+    </div>
+</fieldset>
+<table class="layui-table" lay-size="sm">
+    <thead>
+    <td>星期一</td>
+    <td>星期二</td>
+    <td>星期三</td>
+    <td>星期四</td>
+    <td>星期五</td>
+    <td>星期六</td>
+    <td>星期天</td>
+    </thead>
+    <tr>
+        <td>
+            教学北区A楼A-102 教务处预留
+            教学北区A楼A-104 教务处预留
+            教学北区A楼A-106 教务处预留
+            教学北区A楼A-119 物流管理教研室
+            教学北区A楼A-120 学院培训会议室
+            教学北区A楼A-203 会展管理工作室
+            教学北区A楼A-204 企业管理沙盘对抗实训室
+            教学北区A楼A-205 管理软件综合实训室
+            教学北区A楼A-301 预留教室
+            教学北区A楼A-303 预留教室
+            教学北区A楼A-304 预留教室
+            教学北区A楼A-305 预留教室
+            教学北区A楼A-306 预留教室
+            教学北区A楼A-401 教室
+            教学北区A楼A-402 教室
+            教学北区A楼A-403 教室
+            教学北区A楼A-404 教室
+            教学北区A楼A-405 教室
+            教学北区A楼A-406 教室
+            教学北区A楼A-407 教室
+            教学北区A楼A-501 教室
+            教学北区A楼A-503 教室
+            教学北区A楼A-505 教室
+        </td>
+        <td>
+            教学北区A楼A-102 教务处预留
+            教学北区A楼A-104 教务处预留
+            教学北区A楼A-106 教务处预留
+            教学北区A楼A-119 物流管理教研室
+            教学北区A楼A-120 学院培训会议室
+            教学北区A楼A-203 会展管理工作室
+            教学北区A楼A-204 企业管理沙盘对抗实训室
+            教学北区A楼A-205 管理软件综合实训室
+            教学北区A楼A-206 休闲管理学院实训中心
+            教学北区A楼A-207 销售与市场实战中心
+            教学北区A楼A-301 预留教室
+            教学北区A楼A-302 录播实训室
+            教学北区A楼A-303 预留教室
+            教学北区A楼A-304 预留教室
+            教学北区A楼A-305 预留教室
+            教学北区A楼A-306 预留教室
+            教学北区A楼A-401 教室
+            教学北区A楼A-402 教室
+            教学北区A楼A-403 教室
+            教学北区A楼A-404 教室
+            教学北区A楼A-405 教室
+            教学北区A楼A-406 教室
+            教学北区A楼A-407 教室
+            教学北区A楼A-501 教室
+            教学北区A楼A-503 教室
+            教学北区A楼A-505 教室
+        </td>
+        <td>
+            教学北区A楼A-102 教务处预留
+            教学北区A楼A-104 教务处预留
+            教学北区A楼A-106 教务处预留
+            教学北区A楼A-119 物流管理教研室
+            教学北区A楼A-120 学院培训会议室
+            教学北区A楼A-203 会展管理工作室
+            教学北区A楼A-204 企业管理沙盘对抗实训室
+            教学北区A楼A-205 管理软件综合实训室
+            教学北区A楼A-206 休闲管理学院实训中心
+            教学北区A楼A-207 销售与市场实战中心
+            教学北区A楼A-301 预留教室
+            教学北区A楼A-302 录播实训室
+            教学北区A楼A-303 预留教室
+            教学北区A楼A-304 预留教室
+            教学北区A楼A-305 预留教室
+            教学北区A楼A-306 预留教室
+            教学北区A楼A-401 教室
+            教学北区A楼A-402 教室
+            教学北区A楼A-403 教室
+            教学北区A楼A-404 教室
+            教学北区A楼A-405 教室
+            教学北区A楼A-406 教室
+            教学北区A楼A-407 教室
+            教学北区A楼A-501 教室
+            教学北区A楼A-503 教室
+            教学北区A楼A-505 教室
+        </td>
+        <td>
+            教学北区A楼A-102 教务处预留
+            教学北区A楼A-104 教务处预留
+            教学北区A楼A-106 教务处预留
+            教学北区A楼A-119 物流管理教研室
+            教学北区A楼A-120 学院培训会议室
+            教学北区A楼A-201 走你旅游运营工作室
+            教学北区A楼A-203 会展管理工作室
+            教学北区A楼A-204 企业管理沙盘对抗实训室
+            教学北区A楼A-205 管理软件综合实训室
+            教学北区A楼A-206 休闲管理学院实训中心
+            教学北区A楼A-207 销售与市场实战中心
+            教学北区A楼A-301 预留教室
+            教学北区A楼A-302 录播实训室
+            教学北区A楼A-303 预留教室
+            教学北区A楼A-304 预留教室
+            教学北区A楼A-305 预留教室
+            教学北区A楼A-306 预留教室
+            教学北区A楼A-401 教室
+            教学北区A楼A-402 教室
+            教学北区A楼A-403 教室
+            教学北区A楼A-404 教室
+            教学北区A楼A-405 教室
+            教学北区A楼A-406 教室
+            教学北区A楼A-407 教室
+            教学北区A楼A-501 教室
+            教学北区A楼A-503 教室
+            教学北区A楼A-505 教室
+        </td>
+        <td>
+            教学北区A楼A-102 教务处预留
+            教学北区A楼A-104 教务处预留
+            教学北区A楼A-106 教务处预留
+            教学北区A楼A-119 物流管理教研室
+            教学北区A楼A-120 学院培训会议室
+            教学北区A楼A-201 走你旅游运营工作室
+            教学北区A楼A-203 会展管理工作室
+            教学北区A楼A-204 企业管理沙盘对抗实训室
+            教学北区A楼A-205 管理软件综合实训室
+            教学北区A楼A-206 休闲管理学院实训中心
+            教学北区A楼A-301 预留教室
+            教学北区A楼A-302 录播实训室
+            教学北区A楼A-303 预留教室
+            教学北区A楼A-304 预留教室
+            教学北区A楼A-305 预留教室
+            教学北区A楼A-306 预留教室
+            教学北区A楼A-401 教室
+            教学北区A楼A-402 教室
+            教学北区A楼A-403 教室
+            教学北区A楼A-404 教室
+            教学北区A楼A-405 教室
+            教学北区A楼A-406 教室
+            教学北区A楼A-407 教室
+            教学北区A楼A-501 教室
+            教学北区A楼A-503 教室
+            教学北区A楼A-505 教室
+        </td>
+        <td>
+            教学北区A楼A-102 教务处预留
+            教学北区A楼A-104 教务处预留
+            教学北区A楼A-106 教务处预留
+            教学北区A楼A-119 物流管理教研室
+            教学北区A楼A-120 学院培训会议室
+            教学北区A楼A-204 企业管理沙盘对抗实训室
+            教学北区A楼A-205 管理软件综合实训室
+            教学北区A楼A-206 休闲管理学院实训中心
+            教学北区A楼A-301 预留教室
+            教学北区A楼A-302 录播实训室
+            教学北区A楼A-303 预留教室
+            教学北区A楼A-304 预留教室
+            教学北区A楼A-305 预留教室
+            教学北区A楼A-306 预留教室
+            教学北区A楼A-401 教室
+            教学北区A楼A-402 教室
+            教学北区A楼A-403 教室
+            教学北区A楼A-404 教室
+            教学北区A楼A-405 教室
+            教学北区A楼A-406 教室
+            教学北区A楼A-407 教室
+            教学北区A楼A-501 教室
+            教学北区A楼A-503 教室
+            教学北区A楼A-505 教室
+        </td>
+        <td>
+            教学北区A楼A-102 教务处预留
+            教学北区A楼A-104 教务处预留
+            教学北区A楼A-106 教务处预留
+            教学北区A楼A-119 物流管理教研室
+            教学北区A楼A-120 学院培训会议室
+            教学北区A楼A-201 走你旅游运营工作室
+            教学北区A楼A-203 会展管理工作室
+            教学北区A楼A-204 企业管理沙盘对抗实训室
+            教学北区A楼A-205 管理软件综合实训室
+            教学北区A楼A-301 预留教室
+            教学北区A楼A-302 录播实训室
+            教学北区A楼A-303 预留教室
+            教学北区A楼A-304 预留教室
+            教学北区A楼A-305 预留教室
+            教学北区A楼A-306 预留教室
+            教学北区A楼A-401 教室
+            教学北区A楼A-402 教室
+            教学北区A楼A-403 教室
+            教学北区A楼A-404 教室
+            教学北区A楼A-405 教室
+            教学北区A楼A-406 教室
+            教学北区A楼A-407 教室
+            教学北区A楼A-501 教室
+            教学北区A楼A-503 教室
+            教学北区A楼A-505 教室
+        </td>
+    </tr>
+</table>
+<!--<iframe src="./tree.html" frameborder="0" scrolling="0" id="tree"></iframe>-->
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element', function () {
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function (elem) {
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    //Demo
+    layui.use(['tree', 'layer'], function(){
+        var layer = layui.layer
+            ,$ = layui.jquery;
+        layui.tree({
+            elem: '#demo1' //指定元素
+            ,target: 'tree' //是否新选项卡打开（比如节点返回href才有效）
+            ,click: function(item){ //点击节点回调
+//                layer.msg('当前节名称：'+ item.name + '<br>全部参数：'+ JSON.stringify(item));
+                console.log(item);
+            }
+            ,nodes: [ //节点
+                {
+                    name:"<input type='checkbox'/>" + '西安欧亚学院'
+                    ,id: 2
+                    ,href:'activity/ouya.html'
+                    ,spread: true
+                    ,children: [
+                    {
+                        name:"<input type='checkbox'/>" + '学生发展处'
+                        ,id: 22
+                        ,href:'activity/fenyuan.html'
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '学生处就业中心'
+                            ,id: 121
+                            ,href:'activity/fenyuan_node.html'
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '学生发展处研发中心'
+                            ,id: 121
+                            ,spread: true
+                        }
+                    ]
+                    },
+                    {
+                        name: "<input type='checkbox'/>" + '信息工程学院'
+                        ,id: 22
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '软件工程'
+                            ,id: 121
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '通信工程'
+                            ,id: 121
+                        }
+                    ]
+                    },
+                    {
+                        name: "<input type='checkbox'/>" + '人居环境学院'
+                        ,id: 22
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '土木工程'
+                            ,id: 121
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '工程造价'
+                            ,id: 121
+                        }
+                    ]
+                    }
+                ]
+                }
+            ]
+        });
+        var height = $(window).height();
+        $("body").css("height",height);
+        //生成一个模拟树
+        var createTree = function(node, start){
+            node = node || function(){
+                    var arr = [];
+                    for(var i = 1; i < 10; i++){
+                        arr.push({
+                            name: i.toString().replace(/(\d)/, '$1$1$1$1$1$1$1$1$1')
+                        });
+                    }
+                    return arr;
+                }();
+            start = start || 1;
+            layui.each(node, function(index, item){
+                if(start < 10 && index < 9){
+                    var child = [
+                        {
+                            name: (1 + index + start).toString().replace(/(\d)/, '$1$1$1$1$1$1$1$1$1')
+                        }
+                    ];
+                    node[index].children = child;
+                    createTree(child, index + start + 1);
+                }
+            });
+            return node;
+        };
+        layui.tree({
+            elem: '#demo2' //指定元素
+            ,nodes: createTree()
+        });
+    });
+</script>
+</body>
+</html>
