@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        .select input{height: 35px!important;width: 200px}
+        thead td{background: #3c8dbc!important;color: white}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
+    <legend style="font-size: 14px"><span class="color">计划院系</span></legend>
+    <table class="layui-table" lay-size="sm" style="width: 500px">
+        <tr>
+            <td>目前操作计划</td>
+            <td>2017/2018学年第二学期网络选课</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="selects">
+                    <label>学历：</label>
+                    <select>
+                        <option>--请选择--</option>
+                        <option>本科</option>
+                        <option>专科</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <label>院系代号关键字：</label>
+                    <input type="text" style="width: 120px;height: 20px" placeholder="院系代号关键字">
+                </div>
+            </td>
+            <td>
+                <input type="button" value="查询">
+            </td>
+        </tr>
+    </table>
+    <table class="layui-table" lay-size="sm" style="width: 800px">
+        <tr>
+            <td>
+                <div class="selects">
+                    <label>批次修改可选学分上限：</label>
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <label>批次修改学分上限：</label>
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <label>批次修改学分下限：</label>
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <input type="button" value="批量修改">
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="layui-table" lay-size="sm">
+        <thead>
+            <td>院系代号</td>
+            <td>院系名称</td>
+            <td>年级</td>
+            <td>可选学分上限</td>
+            <td>学分上限</td>
+            <td>学分下限</td>
+            <td>人数</td>
+        </thead>
+        <tr>
+            <td>01155510</td>
+            <td>英语</td>
+            <td>1</td>
+            <td>
+                <div class="selects">
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>81</td>
+        </tr>
+        <tr>
+            <td>01155510</td>
+            <td>英语</td>
+            <td>1</td>
+            <td>
+                <div class="selects">
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>01155510</td>
+            <td>英语</td>
+            <td>1</td>
+            <td>
+                <div class="selects">
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <input type="text" style="width: 80px;height: 20px" placeholder="">
+                </div>
+            </td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td colspan="7" style="text-align: center">
+                <input type="button" value="确定修改">
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element',"laydate", function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+<script>
+    $(function () {
+        $(".add").click(function () {
+            layer.open({
+                type: 1,
+                title: '添加',
+                area: ['100%', '100%;'],
+                content: $('#add')
+            });
+        })
+
+
+        $(".info").click(function () {
+            layer.open({
+                type: 1,
+                title: '详情',
+                area: ['100%', '100%;'],
+                content: $('#info')
+            });
+        })
+    })
+</script>
+</body>
+</html>

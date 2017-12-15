@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        .select input{height: 35px!important;width: 200px}
+        thead td{background: #3c8dbc!important;color: white}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
+    <legend style="font-size: 14px"><span class="color">阶段对象设定</span></legend>
+    <table class="layui-table" lay-size="sm" style="width: 500px">
+        <tr>
+            <td>目前操作计划</td>
+            <td>2017/2018学年第二学期网络选课</td>
+            <td>
+                <div class="selects">
+                    <label>目前操作阶段：</label>
+                    <select>
+                        <option>--请选择--</option>
+                        <option>第一阶段 </option>
+                        <option>第二阶段</option>
+                        <option>第三阶段</option>
+                        <option>第四阶段</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div style="width: 100%;height: 30px;background: #3c8dbc;line-height: 30px;color: white">
+        &nbsp;&nbsp;选课阶段详情
+    </div>
+    <table class="layui-table" lay-size="sm" >
+        <tr>
+            <td>计划代号：118</td>
+            <td>阶段代号：1</td>
+            <td>
+                <div class="selects">
+                    <label>	是否显示于
+                        选课资讯网：</label>
+                    <select>
+                        <option>--请选择--</option>
+                        <option>是</option>
+                        <option>否</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">阶段抬头：<input type="text" style="width: 400px;height: 20px"></td>
+        </tr>
+        <tr>
+            <td>开始时间：2017-10-10</td>
+            <td>结束时间：2017-10-22</td>
+            <td>
+                <div class="selects">
+                    <label>	选课方式</label>
+                    <select>
+                        <option>--请选择--</option>
+                        <option>随机抽签</option>
+                        <option>先到先得</option>
+                        <option>志愿</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                阶段描述：<input type="text" style="width: 700px;height: 20px">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                公布事项：<input type="text" style="width: 700px;height: 20px">
+            </td>
+        </tr>
+        <tr>
+            <td>阶段状态：正常</td>
+            <td>操作人员：admin</td>
+            <td>操作日期：2017-10-10</td>
+        </tr>
+    </table>
+    <span style="color: #00a7d0;margin-left: 10px">阶段对象列表</span>
+    <table class="layui-table" lay-size="sm">
+        <tr>
+            <td>代号</td>
+            <td>阶段对象</td>
+            <td>年级限制</td>
+            <td>开始时间</td>
+            <td>结束时间</td>
+            <td>每日开始时间</td>
+            <td>每日结束时间</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div class="selects">
+                    <label>	选课对象</label>
+                    <select>
+                        <option>--请选择--</option>
+                        <option>本科</option>
+                        <option>专科</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <input type="checkbox">1 <br>
+                <input type="checkbox">2<br>
+                <input type="checkbox">3<br>
+                <input type="checkbox">4<br>
+            </td>
+            <td>
+                <input type="date">
+            </td>
+            <td>
+                <input type="date">
+            </td>
+            <td>
+                <input type="time">
+            </td>
+            <td>
+                <input type="time">
+            </td>
+            <td>
+                <span style="color: blue;text-decoration: underline;cursor: pointer">增加</span>
+                <span style="color: blue;text-decoration: underline;cursor: pointer">取消</span>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element',"laydate", function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+</html>

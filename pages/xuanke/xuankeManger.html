@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>课程管理</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;}
+    </style>
+</head>
+<body>
+<ul class="layui-nav" style="background:#3c8dbc">
+    <li class="layui-nav-item">
+        <a href="javascript:;">选课计划</a>
+        <dl class="layui-nav-child">
+            <dd><a href="./xuankejihua.html" target="kecheng">选课计划</a></dd>
+            <dd><a href="./jihuayuanxi.html" target="kecheng">计划院系</a></dd>
+            <dd><a href="./jihuayuanxijiancha.html" target="kecheng">计划院系检查</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">选课阶段</a>
+        <dl class="layui-nav-child">
+            <dd><a href="./jieduansheding.html" target="kecheng">阶段设定</a></dd>
+            <dd><a href="./jieduanduixiang.html" target="kecheng">阶段对象</a></dd>
+            <dd><a href="./jieduankecheng.html" target="kecheng">阶段课程</a></dd>
+            <dd><a href="jieduanfenzu.html" target="kecheng">阶段分组</a></dd>
+            <!--<dd><a href="guihuakaikelv.html" target="kecheng">阶段课程检核</a></dd>-->
+            <!--<dd><a href="guihuakaikelv.html" target="kecheng">阶段复制</a></dd>-->
+            <dd><a href="xuankejiancha.html" target="kecheng">选课检查</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">选课后操作</a>
+        <dl class="layui-nav-child">
+            <dd><a href="" target="kecheng">选课结果检核</a></dd>
+            <dd><a href="" target="kecheng">选课结果调整</a></dd>
+            <dd><a href="" target="kecheng">学生课程清除</a></dd>
+            <dd><a href="" target="kecheng">汇总选课结果</a></dd>
+            <dd><a href="" target="kecheng">特殊加选</a></dd>
+            <dd><a href="" target="kecheng">选课结果调整</a></dd>
+            <!--<dd><a href="importStudentInfo.html" target="kecheng">班级大课表查询</a></dd>-->
+            <!--<dd><a href="importStudentInfo.html" target="kecheng">教师大课表查询</a></dd>-->
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">查询作业</a>
+        <dl class="layui-nav-child">
+            <dd><a href="xuankejilu.html" target="kecheng">选课操作记录</a></dd>
+            <dd><a href="yuanxixueshengtongji.html" target="kecheng">院系学级学生统计</a></dd>
+            <!--<dd><a href="zhixingjihuatongji.html" target="kecheng">选课结果（行政班）</a></dd>-->
+            <dd><a href="xueshengxuankejieduan.html" target="kecheng">学生选课阶段查询</a></dd>
+        </dl>
+    </li>
+</ul>
+<iframe src="./xuankejihua.html" id="xueji" name="kecheng" style="width: 100%;" scrolling="0" frameborder="0"></iframe>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    $(function () {
+        var height = $(window).height();
+        $("#xueji").height(height-80)
+    })
+</script>
+<script>
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+</body>
+</html>

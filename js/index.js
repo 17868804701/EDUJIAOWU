@@ -1432,7 +1432,7 @@
                 "F_EnCode": "SystemLog",
                 "F_FullName": "选课管理",
                 "F_Icon": "fa fa-warning",
-                "F_UrlAddress": "/SystemManage/Log/Index",
+                "F_UrlAddress": "/EDUJIAOWU/pages/xuanke/xuankeManger.html",
                 "F_Target": "iframe",
                 "F_IsMenu": 1,
                 "F_AllowExpand": 1,
