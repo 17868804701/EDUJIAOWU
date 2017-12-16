@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        /*.select input{height: 35px!important;width: 200px}*/
+        thead td{background: #3c8dbc!important;color: white}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
+    <legend style="font-size: 14px"><span class="color">成绩对应设定</span></legend>
+    <table class="layui-table" lay-size="sm" style="width: 500px;margin-left: 10px">
+        <tr>
+            <td>
+                <div class="selects">
+                    <label>年级：</label>
+                    <select>
+                        <option>--请选择--</option>
+                        <option>2017</option>
+                        <option>2016 </option>
+                        <option>2015 </option>
+                        <option>2014 </option>
+                        <option>2013 </option>
+                        <option>2012 </option>
+                        <option>2011 </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <label>对象：</label>
+                    <select>
+                        <option>--请选择--</option>
+                        <option>专科</option>
+                        <option>本科 </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px">立即查询</button>
+                <button class="layui-btn layui-btn-xs layui-btn-normal add" style="margin-left: 10px">新增</button>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<table class="layui-table" lay-size="sm" style="width: 800px;margin-left: 10px">
+    <thead>
+    <td>序号</td>
+    <td>成绩等级</td>
+    <td>区间</td>
+    <td>积分</td>
+    <td>备注</td>
+    <td>是否合格</td>
+    <td>操作</td>
+    </thead>
+    <tr>
+        <td>1</td>
+        <td>A</td>
+        <td>90-100</td>
+        <td>4.00</td>
+        <td>优秀</td>
+        <td>合格</td>
+        <td>
+            <span class="edit" style="color: blue;cursor: pointer;text-decoration: underline">编辑</span>
+            <span style="color: blue;cursor: pointer;text-decoration: underline">删除</span>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>B</td>
+        <td>80-89</td>
+        <td>3.00</td>
+        <td>良好</td>
+        <td>合格</td>
+        <td>
+            <span class="edit" style="color: blue;cursor: pointer;text-decoration: underline">编辑</span>
+            <span style="color: blue;cursor: pointer;text-decoration: underline">删除</span>
+        </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>C</td>
+        <td>70-79</td>
+        <td>2.00</td>
+        <td>中等</td>
+        <td>合格</td>
+        <td>
+            <span class="edit" style="color: blue;cursor: pointer;text-decoration: underline">编辑</span>
+            <span style="color: blue;cursor: pointer;text-decoration: underline">删除</span>
+        </td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>D</td>
+        <td>60-69</td>
+        <td>1.00</td>
+        <td>合格</td>
+        <td>合格</td>
+        <td>
+            <span  class="edit" style="color: blue;cursor: pointer;text-decoration: underline">编辑</span>
+            <span style="color: blue;cursor: pointer;text-decoration: underline">删除</span>
+        </td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>E</td>
+        <td>0-59</td>
+        <td>0.00</td>
+        <td>未通过</td>
+        <td>合格</td>
+        <td>
+            <span class="edit" style="color: blue;cursor: pointer;text-decoration: underline">编辑</span>
+            <span style="color: blue;cursor: pointer;text-decoration: underline">删除</span>
+        </td>
+    </tr>
+</table>
+<!--编辑-->
+<div id="add" style="display: none;text-align: center">
+    <br>
+    <div class="layui-form select layui-form-pane">
+        <div class="layui-inline">
+            <label class="layui-form-label">等级</label>
+            <div class="layui-input-inline">
+                <select name="quiz" style="height: 35px">
+                    <option value="">请选择</option>
+                    <option value="1">A</option>
+                    <option value="2">B</option>
+                    <option value="3">C</option>
+                    <option value="4">D</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="layui-form select layui-form-pane">
+        <div class="layui-inline">
+            <label class="layui-form-label">区间</label>
+            <div class="layui-input-inline">
+                <select name="quiz" style="height: 35px">
+                    <option value="">请选择</option>
+                    <option value="1">0-59</option>
+                    <option value="2">60-69</option>
+                    <option value="3">70-79</option>
+                    <option value="4">80-89</option>
+                    <option value="4">90-100</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="layui-form select layui-form-pane">
+        <div class="layui-inline">
+            <label class="layui-form-label">积分</label>
+            <div class="layui-input-inline">
+                <select name="quiz" style="height: 35px">
+                    <option value="">请选择</option>
+                    <option value="1">6</option>
+                    <option value="1">5</option>
+                    <option value="1">4</option>
+                    <option value="2">3</option>
+                    <option value="3">2</option>
+                    <option value="4">1</option>
+                    <option value="4">0</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="layui-form select layui-form-pane">
+        <div class="layui-inline">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" style="width: 210px" placeholder="请输入备注">
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="layui-form select layui-form-pane">
+        <div class="layui-inline">
+            <label class="layui-form-label">是否合格</label>
+            <div class="layui-input-inline">
+                <select name="quiz" style="height: 35px">
+                    <option value="">请选择</option>
+                    <option value="1">是</option>
+                    <option value="1">否</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="layui-form select layui-form-pane">
+        <div class="layui-inline">
+            <button class="layui-btn layui-btn-sm layui-btn-normal">保存</button>
+        </div>
+    </div>
+</div>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element',"laydate", function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+
+<script>
+$(function () {
+    $(".add").click(function () {
+        layer.open({
+            type: 1,
+            title: '增加',
+            area: ['400px', '420px'],
+            content: $('#add')
+        });
+    })
+
+    $(".edit").click(function () {
+        layer.open({
+            type: 1,
+            title: '编辑',
+            area: ['400px', '420px'],
+            content: $('#add')
+        });
+    })
+})
+</script>
+</body>
+</html>

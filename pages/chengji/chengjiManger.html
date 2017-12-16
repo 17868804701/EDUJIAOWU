@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>成绩管理</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;}
+    </style>
+</head>
+<body>
+<ul class="layui-nav" style="background:#3c8dbc">
+    <li class="layui-nav-item">
+        <a href="javascript:;">成绩管理</a>
+        <dl class="layui-nav-child">
+            <dd><a href="chengjiduiyingsheding.html" target="kecheng">成绩对应设定</a></dd>
+            <dd><a href="chengjizhuandang.html" target="kecheng">成绩转档</a></dd>
+            <dd><a href="chengjibudeng.html" target="kecheng">成绩补登</a></dd>
+            <dd><a href="chengjixiugai.html" target="kecheng">成绩修改</a></dd>
+            <dd><a href="addChengji.html" target="kecheng">新增成绩</a></dd>
+            <dd><a href="chengjishangchuan.html" target="kecheng">成绩上传</a></dd>
+            <!--<dd><a href="" target="kecheng">删除成绩</a></dd>-->
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">成绩查询</a>
+        <dl class="layui-nav-child">
+            <dd><a href="chengjichaxun.html" target="kecheng">成绩查询</a></dd>
+            <!--<dd><a href="" target="kecheng">不及格清单</a></dd>-->
+            <dd><a href=" chengjikongque.html" target="kecheng">成绩空缺统计</a></dd>
+            <dd><a href="xiugaijilu.html" target="kecheng">修改记录</a></dd>
+            <!--<dd><a href="" target="kecheng">累计不及格</a></dd>-->
+            <dd><a href="chongxiuchaxun.html" target="kecheng">重修查询</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">成绩列印</a>
+        <dl class="layui-nav-child">
+            <dd><a href="" target="kecheng">整批列印</a></dd>
+            <dd><a href="" target="kecheng">个别列印</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">成绩统计</a>
+        <dl class="layui-nav-child">
+            <dd><a href="" target="kecheng">成绩统计</a></dd>
+        </dl>
+    </li>
+
+    <li class="layui-nav-item">
+        <a href="javascript:;">成绩排名</a>
+        <dl class="layui-nav-child">
+            <dd><a href="" target="kecheng">平均分排名</a></dd>
+        </dl>
+    </li>
+
+    <li class="layui-nav-item">
+        <a href="javascript:;">学籍预警</a>
+        <dl class="layui-nav-child">
+            <dd><a href="" target="kecheng">学籍预警与清理</a></dd>
+            <dd><a href="" target="kecheng">预警名单查询</a></dd>
+            <dd><a href="" target="kecheng">预警内容设定</a></dd>
+        </dl>
+    </li>
+
+    <li class="layui-nav-item">
+        <a href="javascript:;">成绩分析与教学总结</a>
+        <dl class="layui-nav-child">
+            <dd><a href="" target="kecheng">教学总结设定</a></dd>
+            <dd><a href="" target="kecheng">成绩分析与总结列印</a></dd>
+        </dl>
+    </li>
+
+</ul>
+<iframe src="chengjiduiyingsheding.html" id="xueji" name="kecheng" style="width: 100%;" scrolling="0" frameborder="0"></iframe>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    $(function () {
+        var height = $(window).height();
+        $("#xueji").height(height-80)
+    })
+</script>
+<script>
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+</body>
+</html>

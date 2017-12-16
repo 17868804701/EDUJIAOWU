@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        /*.select input{height: 35px!important;width: 200px}*/
+        thead td{background: #3c8dbc!important;color: white}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
+    <legend style="font-size: 14px"><span class="color">成绩查询</span></legend>
+    <table class="layui-table" lay-size="sm" style="width: 600px;margin-left: 10px">
+        <tr>
+            <td>
+              学号：<input type="text" style="width: 180px" value="14610801152313">
+            </td>
+            <td>
+                课程总代码：<input type="text" style="width: 180px">
+            </td>
+            <td>
+                <input type="button" value="查询">
+            </td>
+        </tr>
+    </table>
+
+
+    <table class="layui-table" lay-size="sm">
+        <thead>
+            <td>序号</td>
+            <td>课程总码</td>
+            <td>课程名称</td>
+            <td>授课教师</td>
+            <td>学号</td>
+            <td>学生姓名</td>
+            <td>成绩</td>
+            <td>成绩状态</td>
+            <td>修课状态</td>
+            <td>重修状态</td>
+            <td>备注</td>
+            <td>操作人员</td>
+            <td>操作时间</td>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>151014091AW027001</td>
+            <td>食品安全与日常饮食</td>
+            <td>李小宁</td>
+            <td>14610801152313</td>
+            <td>黄森</td>
+            <td>90</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td></td>
+            <td>admin</td>
+            <td>2015/12/15 21:27:46</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>151014091AW027001</td>
+            <td>从爱因斯坦到霍金的宇宙</td>
+            <td>李小宁</td>
+            <td>14610801152313</td>
+            <td>黄森</td>
+            <td>90</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td></td>
+            <td>admin</td>
+            <td>2015/12/15 21:27:46</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>151014091AW027001</td>
+            <td>数学的思维方式与创新</td>
+            <td>李小宁</td>
+            <td>14610801152313</td>
+            <td>黄森</td>
+            <td>90</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td></td>
+            <td>admin</td>
+            <td>2015/12/15 21:27:46</td>
+        </tr>
+    </table>
+</fieldset>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element',"laydate", function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+</html>
