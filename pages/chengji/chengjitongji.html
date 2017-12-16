@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalabel=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body {
+            background: white;
+            width: 1650px
+        }
+        thead td{background: #3c8dbc!important;color: white}
+        .color {
+            color: #1E9FFF !important;
+            font-weight: bold
+        }
+
+        .select input {
+            height: 35px !important;
+            width: 200px
+        }
+
+        .selects {
+            float: left;
+            margin: 10px
+        }
+
+        .selects select {
+            height: 33px;
+            width: 140px;
+            color: #333;
+            border: 1px solid #e6e6e6
+        }
+
+        .selects select option {
+            height: 33px;
+            width: 140px;
+            color: #333
+        }
+
+        .selects label {
+            color: #999999 !important;
+            width: 70px;
+            display: inline-block;
+            text-align: right
+        }
+        /*#tree{*/
+        /*width: 20%;*/
+        /*margin-top: 0px;*/
+        /*height: 400px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 1184px">
+    <legend style="font-size: 14px"><span class="color">成绩统计</span></legend>
+    <div class="selects">
+        <label>选择学期：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>第一学期</option>
+            <option>第二学期</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>选择学年：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>2014</option>
+            <option>2015</option>
+            <option>2016</option>
+            <option>2017</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>所在年级：</label>
+        <select>
+            <option>--请选择--</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </div>
+    <div class="selects">
+        <label>课程：</label>
+        <input type="text" style="width: 160px;height: 28px" placeholder="请输入课程代码">
+    </div>
+</fieldset>
+<div style="position: absolute;margin-left: 25%">
+    <button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px">立即查询</button>
+    <button class="layui-btn layui-btn-xs layui-btn-normal" style="margin-left: 10px">导出Excel</button>
+</div>
+<div style="width: 17%;border: 1px solid gainsboro;min-height: 400px">
+    <div style="display: inline-block;width: 90%; padding: 10px; border: 0px solid red;">
+        <input type="text" placeholder="搜索" class="layui-input" style="height: 30px">
+        <ul id="demo1" style="width: 1100px;margin-top: 10px" ></ul>
+    </div>
+</div>
+<div style="width: 1500px;float: left;margin-top: -380px;margin-left: 18%">
+    <table class="layui-table" lay-size="sm" width="1900">
+        <thead>
+            <td width="40">学年</td>
+            <td>学期</td>
+            <td>课程总码</td>
+            <td>课程名称</td>
+            <td>学时</td>
+            <td>学分</td>
+            <td>开课院系</td>
+            <td>任课教师</td>
+            <td>成绩类型</td>
+            <td>90-100</td>
+            <td>80-89</td>
+            <td>70-79</td>
+            <td>60-69</td>
+            <td>0-59</td>
+            <td>不及格率</td>
+            <td>上课人数</td>
+            <td>平均分</td>
+            <td>最高分</td>
+            <td>最低分</td>
+        </thead>
+        <tr>
+            <td width="40">2017</td>
+            <td>第一学期</td>
+            <td>1710102021A1153000</td>
+            <td>职业素养提升与就业指导</td>
+            <td>2.00</td>
+            <td>1.00</td>
+            <td>学生发展处研发中心</td>
+            <td>陈璐</td>
+            <td>百分</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>45</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td width="40">2017</td>
+            <td>第一学期</td>
+            <td>1710102021A1153000</td>
+            <td>	青年领袖成长</td>
+            <td>2.00</td>
+            <td>1.00</td>
+            <td>学生发展处研发中心</td>
+            <td>陈璐</td>
+            <td>百分</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>45</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<!--<iframe src="./tree.html" frameborder="0" scrolling="0" id="tree"></iframe>-->
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element', function () {
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function (elem) {
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    //Demo
+    layui.use(['tree', 'layer'], function(){
+        var layer = layui.layer
+            ,$ = layui.jquery;
+        layui.tree({
+            elem: '#demo1' //指定元素
+            ,target: 'tree' //是否新选项卡打开（比如节点返回href才有效）
+            ,click: function(item){ //点击节点回调
+//                layer.msg('当前节名称：'+ item.name + '<br>全部参数：'+ JSON.stringify(item));
+                console.log(item);
+            }
+            ,nodes: [ //节点
+                {
+                    name:"<input type='checkbox'/>" + '西安欧亚学院'
+                    ,id: 2
+                    ,href:'activity/ouya.html'
+                    ,spread: true
+                    ,children: [
+                    {
+                        name:"<input type='checkbox'/>" + '学生发展处'
+                        ,id: 22
+                        ,href:'activity/fenyuan.html'
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '学生处就业中心'
+                            ,id: 121
+                            ,href:'activity/fenyuan_node.html'
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '学生发展处研发中心'
+                            ,id: 121
+                            ,spread: true
+                        }
+                    ]
+                    },
+                    {
+                        name: "<input type='checkbox'/>" + '信息工程学院'
+                        ,id: 22
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '软件工程'
+                            ,id: 121
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '通信工程'
+                            ,id: 121
+                        }
+                    ]
+                    },
+                    {
+                        name: "<input type='checkbox'/>" + '人居环境学院'
+                        ,id: 22
+                        ,spread: true
+                        ,children:[
+                        {
+                            name: "<input type='checkbox'/>" + '土木工程'
+                            ,id: 121
+                        },
+                        {
+                            name: "<input type='checkbox'/>" + '工程造价'
+                            ,id: 121
+                        }
+                    ]
+                    },
+                ]
+                }
+            ]
+        });
+        var height = $(window).height();
+        $("body").css("height",height);
+        //生成一个模拟树
+        var createTree = function(node, start){
+            node = node || function(){
+                    var arr = [];
+                    for(var i = 1; i < 10; i++){
+                        arr.push({
+                            name: i.toString().replace(/(\d)/, '$1$1$1$1$1$1$1$1$1')
+                        });
+                    }
+                    return arr;
+                }();
+            start = start || 1;
+            layui.each(node, function(index, item){
+                if(start < 10 && index < 9){
+                    var child = [
+                        {
+                            name: (1 + index + start).toString().replace(/(\d)/, '$1$1$1$1$1$1$1$1$1')
+                        }
+                    ];
+                    node[index].children = child;
+                    createTree(child, index + start + 1);
+                }
+            });
+            return node;
+        };
+        layui.tree({
+            elem: '#demo2' //指定元素
+            ,nodes: createTree()
+        });
+    });
+</script>
+</body>
+</html>

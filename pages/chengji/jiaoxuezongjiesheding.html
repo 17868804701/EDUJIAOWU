@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        /*.select input{height: 35px!important;width: 200px}*/
+        thead td{background: #3c8dbc!important;color: white}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
+    <legend style="font-size: 14px"><span class="color">教学总结设定</span></legend>
+    <table class="layui-table" lay-size="sm" style="width: 700px;margin-left: 10px">
+        <tr>
+            <td>
+                <div class="selects">
+                    <label>学年：</label>
+                    <select>
+                        <option>2015</option>
+                        <option>--请选择--</option>
+                        <option>2017</option>
+                        <option>2016</option>
+                        <option>2014</option>
+                        <option>2013</option>
+                        <option>2012</option>
+                        <option>2011 </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <label>学期：</label>
+                    <select>
+                        <option>第一学期</option>
+                        <option>--请选择--</option>
+                        <option>第二学期</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="selects">
+                    <label>开课单位i：</label>
+                    <select>
+                        <option>信息工程学院</option>
+                        <option>--请选择--</option>
+                        <option>学生发展处</option>
+                        <option>教育学</option>
+                        <option>心理学</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <label>年级：</label>
+                    <select>
+                        <option>--请选择--</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="selects">
+                    <label>课程：</label>
+                    <input type="text" placeholder="请输入课程" style="width: 140px">
+                </div>
+            </td>
+            <td>
+                <input type="button" value="查询">
+            </td>
+        </tr>
+    </table>
+    <table class="layui-table" lay-size="sm" style="width: 100%">
+        <thead>
+            <td><input type="checkbox"></td>
+            <td>序号</td>
+            <td>专业/方向</td>
+            <td>课程总码</td>
+            <td>课程名称</td>
+            <td>学分</td>
+            <td>教师</td>
+            <td>对教学效果的评价</td>
+            <td>学工作中好的做法</td>
+            <td>存在问题与改进措施</td>
+            <td>对班级学风的评价</td>
+            <td>总体评价</td>
+            <td>操作</td>
+        </thead>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>1</td>
+            <td>(0174500201)会计学</td>
+            <td>17101745002013A0153001</td>
+            <td>管理会计</td>
+            <td>3</td>
+            <td>邱芳娟</td>
+            <td>V</td>
+            <td>V</td>
+            <td>V</td>
+            <td>V</td>
+            <td>B</td>
+            <td>
+                <span class="edit" style="color: blue;cursor: pointer;text-decoration: underline">编辑</span>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>1</td>
+            <td>	(0174500104)澳大利亚留学合作项目班</td>
+            <td>17101745002013A0153001</td>
+            <td>雅思英语II</td>
+            <td>16</td>
+            <td>不指定</td>
+            <td>V</td>
+            <td>V</td>
+            <td>V</td>
+            <td>V</td>
+            <td>B</td>
+            <td>
+                <span class="edit"  style="color: blue;cursor: pointer;text-decoration: underline">编辑</span>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>1</td>
+            <td>	(0174500104)澳大利亚留学合作项目班</td>
+            <td>17101745002013A0153001</td>
+            <td>雅思英语II</td>
+            <td>16</td>
+            <td>不指定</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <span class="edit"  style="color: blue;cursor: pointer;text-decoration: underline">编辑</span>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<!--编辑-->
+<div id="edit" style="display: none">
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">对教学效果的评价：</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">教学工作中好的做法：</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">存在问题与改进措施：</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">对班级学风的评价：</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <span style="margin-left: 150px">总体评价：<input type="radio">A.很好<input type="radio">B.较好 <input type="radio">.C一般<input type="radio">.D.较差</span>
+    <br><br><button class="layui-btn layui-btn-sm layui-btn-normal" style="margin-left: 200px">提交</button>
+</div>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element',"laydate", function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+<script>
+    $(function () {
+        $(".edit").click(function () {
+            layer.open({
+                type: 1,
+                title: '编辑',
+                area: ['100%', '100%;'],
+                content: $('#edit')
+            });
+        })
+    })
+</script>
+</body>
+</html>

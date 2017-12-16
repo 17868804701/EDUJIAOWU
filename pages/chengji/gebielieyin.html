@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        /*.select input{height: 35px!important;width: 200px}*/
+        thead td{background: #3c8dbc!important;color: white}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
+    <legend style="font-size: 14px"><span class="color">成绩列印</span></legend>
+    <table class="layui-table" lay-size="sm" style="width: 600px;margin-left: 10px">
+        <tr>
+            <td colspan="3">
+                <div class="selects">
+                    <label>类别：</label>
+                    <select>
+                        <option>学期成绩单</option>
+                        <option>--请选择--</option>
+                        <option>学年成绩单</option>
+                        <option>学历成绩单</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="selects">
+                    <label>学年：</label>
+                    <select>
+                        <option>2015</option>
+                        <option>--请选择--</option>
+                        <option>2017</option>
+                        <option>2016</option>
+                        <option>2014</option>
+                        <option>2013</option>
+                        <option>2012</option>
+                        <option>2011 </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <label>学期：</label>
+                    <select>
+                        <option>第一学期</option>
+                        <option>--请选择--</option>
+                        <option>第二学期</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="selects">
+                    <label>专业/专业方向：</label>
+                    <select>
+                        <option>信息工程学院</option>
+                        <option>--请选择--</option>
+                        <option>学生发展处</option>
+                        <option>教育学</option>
+                        <option>心理学</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    学号：<input type="text" style="width: 130px">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                显示：<input type="radio" checked>显示所有成绩 <input type="radio">不显示所有不及格成绩
+            </td>
+            <td>
+                <input type="button" value="查询">
+            </td>
+        </tr>
+    </table>
+    <img src="../../img/634741211776712375.png" alt="">
+</fieldset>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element',"laydate", function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+</html>
