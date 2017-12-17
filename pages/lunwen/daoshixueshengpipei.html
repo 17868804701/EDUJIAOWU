@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        /*.select input{height: 35px!important;width: 200px}*/
+        thead td{background: #3c8dbc!important;color: white}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
+    <legend style="font-size: 14px"><span class="color">导师学生匹配</span></legend>
+    <table class="layui-table">
+        <tr>
+            <td>目前操作计划：文化传媒学院2016届毕业论文工作安排 </td>
+        </tr>
+    </table>
+    <table class="layui-table" lay-size="sm" style="width: 600px;margin-left: 10px">
+        <tr>
+            <td>
+                <div class="selects">
+                    <label>目前操作专业：</label>
+                    <select>
+                        <option>新闻学 </option>
+                        <option>--请选择--</option>
+                        <option>传播新媒体 </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-normal" style="margin-left: 10px">查询</button>
+            </td>
+        </tr>
+    </table>
+    <h3 style="margin-left: 10px">导师学生匹配列表</h3>
+    <table class="layui-table" lay-size="sm">
+        <thead>
+            <td>序号</td>
+            <td>教师编号</td>
+            <td>姓名</td>
+            <td>所属院系</td>
+            <td>类型</td>
+            <td>学生人数</td>
+            <td>已匹配学生</td>
+            <td>操作</td>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>79020768</td>
+            <td>罗丽霞	</td>
+            <td></td>
+            <td>校内导师</td>
+            <td>0-10</td>
+            <td>
+                (12130401110215)任惠馨 <br>
+                (12610802130240)张宇涵<br>
+                (12610109130139)黄瑞娇<br>
+            </td>
+            <td>
+                <span class="shezhi" style="color: blue;cursor: pointer;text-decoration: underline"> 设定</span>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<!--新增计划-->
+<div style="display: none;text-align: center" id="jihua">
+    <h3 style="margin-left: 10px">学生设定 </h3>
+    <table class="layui-table" lay-size="sm">
+        <thead>
+            <td>序号</td>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>指导类型</td>
+            <td>操作</td>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>12130401110215</td>
+            <td>任惠馨</td>
+            <td>主要指导老师</td>
+            <td>
+                <span style="color: blue;cursor: pointer;text-decoration: underline">删除</span>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>12610802130240</td>
+            <td>张宇涵</td>
+            <td>主要指导老师</td>
+            <td>
+                <span style="color: blue;cursor: pointer;text-decoration: underline">删除</span>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>12610109130139</td>
+            <td>黄瑞娇</td>
+            <td>主要指导老师</td>
+            <td>
+                <span style="color: blue;cursor: pointer;text-decoration: underline">删除</span>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <button class="layui-btn layui-btn-sm layui-btn-normal" style="margin-left: 10px">匹配学生</button>
+</div>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element',"laydate", function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+<script>
+    $(function () {
+        $(".shezhi").click(function () {
+            layer.open({
+                type: 1,
+                title: '计划',
+                area: ['50%', '80%;'],
+                content: $('#jihua')
+            });
+        })
+    })
+</script>
+</body>
+</html>

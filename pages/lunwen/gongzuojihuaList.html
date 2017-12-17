@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layui在线调试</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;width: 100%}
+        .color{ color: #1E9FFF!important;font-weight: bold}
+        /*.select input{height: 35px!important;width: 200px}*/
+        thead td{background: #3c8dbc!important;color: white}
+    </style>
+</head>
+<body>
+<!--<span class="layui-breadcrumb" style="margin-left: 10px;margin-top: 6px;display: block">-->
+<!--<span class="color">学籍信息&nbsp;-&nbsp;单一查询</span>-->
+<!--</span>-->
+<fieldset class="layui-elem-field site-demo-button" style="margin-top: 10px;width: 100%">
+    <legend style="font-size: 14px"><span class="color">计划设定</span></legend>
+    <table class="layui-table" lay-size="sm" style="width: 600px;margin-left: 10px">
+        <tr>
+            <td>
+                <div class="selects">
+                    <label>学级：</label>
+                    <select>
+                        <option>2012 </option>
+                        <option>--请选择--</option>
+                        <option>2011 </option>
+                        <option>2013 </option>
+                        <option>2014 </option>
+                        <option>2015 </option>
+                        <option>2016 </option>
+                        <option>2017 </option>
+                        <option>2018 </option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <label>学制：</label>
+                    <select>
+                        <option>本科</option>
+                        <option>--请选择--</option>
+                        <option>专科</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <button class="layui-btn layui-btn-sm layui-btn-normal">查询</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal jihua">新增计划</button>
+    <table class="layui-table" lay-size="sm">
+        <thead>
+            <td>序号</td>
+            <td>计划名称</td>
+            <td>学级</td>
+            <td>学制</td>
+            <td>专业</td>
+            <td>说明</td>
+            <td>附件</td>
+            <td>操作</td>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>2012级本科生毕业论文</td>
+            <td>2012</td>
+            <td>本科</td>
+            <td>俄语教育、企业管理、咨询管理、财务管理</td>
+            <td>*请依附件时程办理</td>
+            <td>
+               <span style="color: blue;cursor: pointer;text-decoration: underline"> 下载</span>
+            </td>
+            <td>
+                <span style="color: blue;cursor: pointer;text-decoration: underline" class="edit"> 编辑</span>
+                <span style="color: blue;cursor: pointer;text-decoration: underline"> 作废</span>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<!--新增计划-->
+<div style="display: none;text-align: center" id="jihua">
+    <div class="layui-form select">
+        <br>
+        <br>
+    <div class="layui-inline" style="margin-left: -20px">
+        <label class="layui-form-label" style="width:110px;">计划名称</label>
+        <div class="layui-input-inline" style="height: 30px">
+            <input type="text" class="layui-input" style="width: 500px" placeholder="计划名称">
+        </div>
+    </div>
+        <br>
+        <br>
+    <div class="layui-inline" style="margin-left: -20px">
+        <label class="layui-form-label" style="width:110px;">计划说明</label>
+        <div class="layui-input-inline" style="height: 30px">
+            <input type="text" class="layui-input" style="width: 500px" placeholder="计划说明">
+        </div>
+    </div>
+        <br>
+        <br>
+    <div class="layui-inline">
+        <label class="layui-form-label" style="width:90px;">学级</label>
+        <div class="layui-input-inline"style="height: 30px;width: 500px">
+            <select name="quiz">
+                <option value="">请选择</option>
+                <option value="1">2012</option>
+                <option value="2">2013</option>
+                <option value="2">2014</option>
+            </select>
+        </div>
+    </div>
+        <br>
+        <br>
+    <div class="layui-inline">
+        <label class="layui-form-label" style="width:90px;">学制</label>
+        <div class="layui-input-inline" style="height: 30px;width: 500px">
+            <select name="quiz">
+                <option value="">请选择</option>
+                <option value="1">专科</option>
+                <option value="2">本科</option>
+                <option value="2">研究生</option>
+            </select>
+        </div>
+    </div>
+        <br>
+        <br>
+        <div class="layui-inline">
+            <label class="layui-form-label" style="width:90px;">专业</label>
+            <div class="layui-input-inline" style="height: 30px;width: 500px">
+                <select name="quiz">
+                    <option value="">请选择</option>
+                    <option value="1">土木工程</option>
+                    <option value="2">会计</option>
+                    <option value="2">环境</option>
+                    <option value="2">软件</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label" style="width:90px;margin-top: 10px;">上传附件</label>
+            <div class="layui-input-inline" style="height: 30px;width: 500px;margin-top: 20px">
+                <input type="file">
+            </div>
+        </div>
+        <br>
+        <br>
+        <button class="layui-btn layui-btn-sm layui-btn-normal">提交</button>
+        <button class="layui-btn layui-btn-sm layui-btn-normal">取消</button>
+    </div>
+</div>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    layui.use('element',"laydate", function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+            elem: '#test1'
+        });
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</script>
+<script>
+    $(function () {
+        $(".jihua,.edit").click(function () {
+            layer.open({
+                type: 1,
+                title: '计划',
+                area: ['70%', '100%;'],
+                content: $('#jihua')
+            });
+        })
+    })
+</script>
+</body>
+</html>

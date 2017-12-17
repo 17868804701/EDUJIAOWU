@@ -443,7 +443,7 @@
                 "F_EnCode": "SystemModule",
                 "F_FullName": "论文管理",
                 "F_Icon": "fa fa-navicon",
-                "F_UrlAddress": "/AuthorizeManage/Module/Index",
+                "F_UrlAddress": "/EDUJIAOWU/pages/lunwen/lunwenManger.html",
                 "F_Target": "iframe",
                 "F_IsMenu": 1,
                 "F_AllowExpand": 0,

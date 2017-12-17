@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>论文管理</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <style>
+        body{background: white;}
+    </style>
+</head>
+<body>
+<ul class="layui-nav" style="background:#3c8dbc">
+    <li class="layui-nav-item">
+        <a href="javascript:;">论文管理</a>
+        <dl class="layui-nav-child">
+            <dd><a href="gongzuojihuaList.html" target="kecheng">工作计划清单</a></dd>
+            <dd><a href="gongzuojindu.html" target="kecheng">工作进度表</a></dd>
+        </dl>
+    </li>
+    <!--<li class="layui-nav-item">-->
+        <!--<a href="javascript:;">流程管理</a>-->
+        <!--<dl class="layui-nav-child">-->
+            <!--<dd><a href="chengjichaxun.html" target="kecheng">流程控制</a></dd>-->
+            <!--<dd><a href=" chengjikongque.html" target="kecheng">流程复制</a></dd>-->
+        <!--</dl>-->
+    <!--</li>-->
+    <li class="layui-nav-item">
+        <a href="javascript:;">人员管理</a>
+        <dl class="layui-nav-child">
+            <dd><a href="daoshisheding.html" target="kecheng">导师设定</a></dd>
+            <dd><a href="xiaozusheding.html" target="kecheng">小组设定</a></dd>
+            <dd><a href="xueshengsheding.html" target="kecheng">学生设定</a></dd>
+            <dd><a href="daoshixueshengpipei.html" target="kecheng">导师学生匹配</a></dd>
+            <dd><a href="xiaowaidaoshi.html" target="kecheng">校外导师管理</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">题目管理</a>
+        <dl class="layui-nav-child">
+            <dd><a href="timuchachong.html" target="kecheng">题目查重</a></dd>
+        </dl>
+    </li>
+
+    <li class="layui-nav-item">
+        <a href="javascript:;">成绩管理</a>
+        <dl class="layui-nav-child">
+            <dd><a href="chengjizonglan.html" target="kecheng">成绩总览</a></dd>
+        </dl>
+    </li>
+
+    <li class="layui-nav-item">
+        <a href="javascript:;">统计查询</a>
+        <dl class="layui-nav-child">
+            <dd><a href="lunwentimu.html" target="kecheng">论文题目</a></dd>
+        </dl>
+    </li>
+
+</ul>
+<iframe src="gongzuojihuaList.html" id="xueji" name="kecheng" style="width: 100%;" scrolling="0" frameborder="0"></iframe>
+<script src="../../layui/layui.js"></script>
+<script src="../../layui/jquery-1.12.4.min.js"></script>
+<script>
+    $(function () {
+        var height = $(window).height();
+        $("#xueji").height(height-80)
+    })
+</script>
+<script>
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+</body>
+</html>
