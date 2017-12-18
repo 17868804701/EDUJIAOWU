@@ -9,6 +9,12 @@
         body{background: white;width: 100%}
         .color{ color: #1E9FFF!important;font-weight: bold}
         .select input{height: 35px!important;width: 200px}
+        .selects select {
+            height: 33px;
+            width: 140px;
+            color: #333;
+            border: 1px solid #e6e6e6
+        }
     </style>
 </head>
 <body>
@@ -110,7 +116,7 @@
         <td>17610108910126</td>
         <td>梁雅</td>
         <td>确认完成</td>
-        <td><span style="color: blue;text-decoration: underline;cursor: pointer">查看</span></td>
+        <td><span class="show" style="color: blue;text-decoration: underline;cursor: pointer">查看</span></td>
     </tr>
     <tr>
         <td>02</td>
@@ -120,7 +126,7 @@
         <td>	17130324110114</td>
         <td>	唐明汝</td>
         <td>确认完成</td>
-        <td><span style="color: blue;text-decoration: underline;cursor: pointer">查看</span></td>
+        <td><span class="show" style="color: blue;text-decoration: underline;cursor: pointer">查看</span></td>
     </tr>
     <tr>
         <td>02</td>
@@ -130,9 +136,203 @@
         <td>		17610809110083</td>
         <td>		刘成艳</td>
         <td>尚未填写</td>
-        <td><span style="color: blue;text-decoration: underline;cursor: pointer">查看</span></td>
+        <td><span class="show" style="color: blue;text-decoration: underline;cursor: pointer">查看</span></td>
     </tr>
 </table>
+
+<div id="show" style="display: none;padding: 5px">
+    <table class="layui-table" lay-size="sm">
+        <tr>
+            <td colspan="3">
+                <h2> 新生学籍资料</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>学号:17610108910126</td>
+            <td>中文姓名:梁雅</td>
+            <td>身份证号:510823199612161067</td>
+        </tr>
+        <tr>
+            <td>学制:专升本</td>
+            <td>分院:人文教育学院</td>
+            <td>专业/方向:英语（专升本）</td>
+        </tr>
+        <tr>
+            <td>年级:1</td>
+            <td>班级:英语专升本1701</td>
+            <td>培养类型:专升本</td>
+        </tr>
+        <tr>
+            <td>入学时间:2017/09/01</td>
+            <td>缴费情况:缴清</td>
+            <td>状态:在读</td>
+        </tr>
+    </table>
+    <table class="layui-table" lay-size="sm">
+        <tr>
+            <td colspan="3">
+                <h2>基本资料</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>出生年月日:1996/12/16</td>
+            <td>性别:女</td>
+            <td>姓名拼音：</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="selects">
+                    <label>血型：</label>
+                    <select>
+                        <option>--请选择--</option>
+                        <option>B</option>
+                        <option>O</option>
+                    </select>
+                </div>
+            </td>
+            <td>民族:汉</td>
+            <td>高考生源地：陕西</td>
+        </tr>
+        <tr>
+            <td>
+              籍贯：<input type="text" style="width: 140px;height: 25px" value="四川省广元市">
+            </td>
+            <td>*华侨港澳台:否</td>
+            <td>特殊人员情况:正常</td>
+        </tr>
+
+        <tr>
+            <td>
+                *戶籍所在地：<input type="text" style="width: 140px;height: 25px" value="四川省绵阳市">
+            </td>
+            <td>
+                <div class="selects">
+                    <label>学生类别：</label>
+                    <select>
+                        <option>统招</option>
+                        <option>--请选择--</option>
+                        <option>成教</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="selects">
+                    <label>健康状况：</label>
+                    <select>
+                        <option>良好</option>
+                        <option>--请选择--</option>
+                        <option>残疾</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                *电子信箱：<input type="text" style="width: 140px;height: 25px" value="17868804701@163.com">
+            </td>
+            <td>
+                *行动电话：<input type="text" style="width: 140px;height: 25px" value="17868804701">
+            </td>
+            <td>
+                *邮政编码：<input type="text" style="width: 140px;height: 25px" value="621000">
+            </td>
+        </tr>
+    </table>
+    <table class="layui-table" lay-size="sm">
+        <tr>
+            <td colspan="4">
+                <h2>宿舍资料</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>社区:第二社区</td>
+            <td>辅导员:常佳</td>
+            <td>公寓楼:西3</td>
+            <td>宿舍号:613</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                *校外住宿地址: <input type="text" style="width: 900px;height: 25px" placeholder="校外住址">
+            </td>
+        </tr>
+    </table>
+
+    <table class="layui-table" lay-size="sm">
+        <tr>
+            <td colspan="4">
+                <h2>本人学历及社会经历(从小学填起)</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                自何年何月</td>
+            <td>至何年何月</td>
+            <td>在何地何学校或何单位学校或工作？任何职？</td>
+            <td>证明人</td>
+        </tr>
+        <tr>
+            <td>
+                2002 / 9</td>
+            <td>2008 / 7</td>
+            <td>剑阁实验小学 , 小组长</td>
+            <td>黄菊</td>
+        </tr>
+        <tr>
+            <td>
+                2008 / 9</td>
+            <td>2011 / 7</td>
+            <td>绵阳富乐中学 , 英语课代表</td>
+            <td>刘小泉</td>
+        </tr>
+        <tr>
+            <td>
+                2011 / 9</td>
+            <td>	2014 / 6</td>
+            <td>绵阳第一中学 , 语文课代表</td>
+            <td>	马海涛</td>
+        </tr>
+    </table>
+    <table class="layui-table" lay-size="sm">
+        <tr>
+            <td colspan="4">
+                <h2>直系亲属或主要社会关系情况</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>称呼</td>
+            <td>中文姓名</td>
+            <td>政治面貌</td>
+            <td>职务</td>
+            <td>工作单位</td>
+            <td>联络电话</td>
+        </tr>
+        <tr>
+            <td>父</td>
+            <td>梁润平</td>
+            <td>群众</td>
+            <td>个体户</td>
+            <td>无</td>
+            <td>15328118197</td>
+        </tr>
+        <tr>
+            <td>母</td>
+            <td>罗莉芳</td>
+            <td>群众</td>
+            <td>个体户</td>
+            <td>无</td>
+            <td>15386664599</td>
+        </tr>
+    </table>
+    <table lay-size="sm" class="layui-table">
+        <tr>
+            <td colspan="4" style="text-align: center">
+                <button class="layui-btn layui-btn-sm layui-btn-normal">保存</button>
+                <button class="layui-btn layui-btn-sm layui-btn-normal">打印</button>
+            </td>
+        </tr>
+    </table>
+</div>
 <script src="../../layui/layui.js"></script>
 <script src="../../layui/jquery-1.12.4.min.js"></script>
 <script>
@@ -195,6 +395,20 @@
 
 
     });
+</script>
+<script>
+    $(function () {
+        $(".show").click(function () {
+            $(".show").click(function () {
+                layer.open({
+                    type: 1,
+                    title: '学生详情',
+                    area: ['100%', '100%'],
+                    content: $('#show')
+                });
+            })
+        })
+    })
 </script>
 </body>
 </html>
